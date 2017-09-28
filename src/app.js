@@ -13,9 +13,10 @@ console.log('App.js is running!');
 	</div>
 	);
 
+    var userName = 'Michael';
 	var templateTwo = (
 	<div>
-	  <h1>Michael Wiss</h1>
+	  <h1>{userName}</h1>
         <p>Age: 26</p>
         <p>Location: Brooklyn, New York</p>
     </div>

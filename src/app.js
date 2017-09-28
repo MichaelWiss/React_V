@@ -8,9 +8,19 @@ console.log('App.js is running!');
 	    <li>Item one</li>
 	    <li>Item two</li>
 	    <li>Item three</li>
+	    <li>Item four</li>
 	  </ol>  
 	</div>
 	);
+
+	var templateTwo = (
+	<div>
+	  <h1>Michael Wiss</h1>
+        <p>Age: 26</p>
+        <p>Location: Brooklyn, New York</p>
+    </div>
+);
+
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);

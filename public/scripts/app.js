@@ -3,68 +3,70 @@
 console.log('App.js is running!');
 
 var template = React.createElement(
-			'div',
-			null,
-			React.createElement(
-						'h1',
-						null,
-						'This is JSX from app.js!'
-			),
-			React.createElement(
-						'p',
-						null,
-						'from Michael'
-			),
-			React.createElement(
-						'ol',
+						'div',
 						null,
 						React.createElement(
-									'li',
-									null,
-									'Item one'
+												'h1',
+												null,
+												'This is JSX from app.js!'
 						),
 						React.createElement(
-									'li',
-									null,
-									'Item two'
+												'p',
+												null,
+												'from Michael'
 						),
 						React.createElement(
-									'li',
-									null,
-									'Item three'
-						),
-						React.createElement(
-									'li',
-									null,
-									'Item four'
+												'ol',
+												null,
+												React.createElement(
+																		'li',
+																		null,
+																		'Item one'
+												),
+												React.createElement(
+																		'li',
+																		null,
+																		'Item two'
+												),
+												React.createElement(
+																		'li',
+																		null,
+																		'Item three'
+												),
+												React.createElement(
+																		'li',
+																		null,
+																		'Item four'
+												)
 						)
-			)
 );
 
-var userName = 'Michael';
-var userAge = '27';
-var userLocation = 'Brooklyn, New York';
+var user = {
+						name: 'Michael',
+						age: 27,
+						location: 'New York'
+};
 
 var templateTwo = React.createElement(
-			'div',
-			null,
-			React.createElement(
-						'h1',
+						'div',
 						null,
-						userName.toUpperCase()
-			),
-			React.createElement(
-						'p',
-						null,
-						'Age: ',
-						userAge
-			),
-			React.createElement(
-						'p',
-						null,
-						'Location: ',
-						userLocation
-			)
+						React.createElement(
+												'h1',
+												null,
+												user.name
+						),
+						React.createElement(
+												'p',
+												null,
+												'Age: ',
+												user.age
+						),
+						React.createElement(
+												'p',
+												null,
+												'Location: ',
+												user.location
+						)
 );
 
 var appRoot = document.getElementById('app');

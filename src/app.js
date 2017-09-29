@@ -15,12 +15,13 @@ console.log('App.js is running!');
 
     var userName = 'Michael';
     var userAge = '27';
+    var userLocation = 'Brooklyn, New York';
 
 	var templateTwo = (
 	<div>
 	  <h1>{userName.toUpperCase()}</h1>
-        <p>{userAge}</p>
-        <p>Location: Brooklyn, New York</p>
+      <p>Age: {userAge}</p>
+      <p>Location: {userLocation}</p>
     </div>
 );
 

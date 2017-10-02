@@ -27,9 +27,7 @@ console.log('App.js is running!');
 
 	function getLocation(location) {
        if (location) {
-       	return location;
-       } else {
-       	return 'unknown';
+       	return <p>Location: {location}</p>;
        }
 
 	}
@@ -39,7 +37,7 @@ console.log('App.js is running!');
 	<div>
 	  <h1>{user.name}</h1>
       <p>Age: {user.age}</p>
-      <p>Location: {getLocation(user.location)}</p>
+      {getLocation(user.location)}
     </div>
 );
 

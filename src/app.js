@@ -20,14 +20,17 @@ const template = (
 	    </ol>  
 	  </div>
 	);
+
+
 let count = 0;
-const templateTwo = {
+const templateTwo = (
    <div>
       <h1>Count: {count} </h1>
+      <button id="my-id">+1</button>
    </div>
-};
+);
 
 const appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
 

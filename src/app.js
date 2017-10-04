@@ -5,7 +5,13 @@ console.log('App.js is running!');
    	title: 'Indecision App',
    	subtitle: 'We help you help yourself',
    	options: ['One', 'Two']
-   };
+};
+
+const onFormSubmit = (e) => {
+  e.preventDefault();
+
+  const option = e.target.elements.option.value;
+};
 
 const template = (
 	  <div>
@@ -17,13 +23,17 @@ const template = (
 	      <li>Item two</li>
 	      <li>Item three</li>
 	      <li>Item four</li>
-	    </ol>  
+	    </ol> 
+	    <form onSubmit={onFormSubmit}>
+           <input type="text" name="option"/>
+           <button>Add Option</button>
+	    </form> 
 	  </div>
 	);
 const appRoot = document.getElementById('app');
 
 
-
+ReactDOM.render(template, appRoot);
 
 
 

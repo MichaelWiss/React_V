@@ -8,6 +8,12 @@ var app = {
 	options: ['One', 'Two']
 };
 
+var onFormSubmit = function onFormSubmit(e) {
+	e.preventDefault();
+
+	var option = e.target.elements.option.value;
+};
+
 var template = React.createElement(
 	'div',
 	null,
@@ -49,6 +55,18 @@ var template = React.createElement(
 			null,
 			'Item four'
 		)
+	),
+	React.createElement(
+		'form',
+		{ onSubmit: onFormSubmit },
+		React.createElement('input', { type: 'text', name: 'option' }),
+		React.createElement(
+			'button',
+			null,
+			'Add Option'
+		)
 	)
 );
 var appRoot = document.getElementById('app');
+
+ReactDOM.render(template, appRoot);

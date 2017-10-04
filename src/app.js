@@ -19,8 +19,8 @@ const onFormSubmit = (e) => {
   }
 };
 
-const removeAll = (app) => {
-	options = 0;
+const removeAll = () => {
+	app.options = 0;
 	render();
 };
 
@@ -39,6 +39,7 @@ const render = () => {
 	 {app.subtitle && <p>{app.subtitle}</p>}
 	    <p>{app.options.length > 0 ? 'Here are your options' : 'no options'}</p>
 	    <p>{app.options.length}</p>
+	    <button onClick={removeAll}>Remove All</button>
 	    <ol>
 	      <li>Item one</li>
 	      <li>Item two</li>
@@ -49,7 +50,7 @@ const render = () => {
            <input type="text" name="option"/>
            <button>Add Option</button>
 	    </form>
-	    <button onClick={removeAll}>Remove All</button>
+	    
  
 	  </div>
 	);

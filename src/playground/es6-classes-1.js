@@ -9,14 +9,17 @@ class Person {
 }
 
 class Student extends Person {
-
+     constructor(name, age, major) {
+     super(name, age);	
+     this.major = major;
+     }
 }
 
-const me = new Person('Michael', 26);
-console.log(me.getDescription());
+const me = new Person('Michael', 26, 'Fine Art');
+console.log(me);
 
 const other = new Person('Antoinette', 30 );
-console.log(other.getDescription());
+console.log(other);
 
 
 

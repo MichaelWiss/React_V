@@ -32,17 +32,20 @@ var Person = function () {
 var Student = function (_Person) {
    _inherits(Student, _Person);
 
-   function Student() {
+   function Student(name, age, major) {
       _classCallCheck(this, Student);
 
-      return _possibleConstructorReturn(this, (Student.__proto__ || Object.getPrototypeOf(Student)).apply(this, arguments));
+      var _this = _possibleConstructorReturn(this, (Student.__proto__ || Object.getPrototypeOf(Student)).call(this, name, age));
+
+      _this.major = major;
+      return _this;
    }
 
    return Student;
 }(Person);
 
-var me = new Person('Michael', 26);
-console.log(me.getDescription());
+var me = new Person('Michael', 26, 'Fine Art');
+console.log(me);
 
 var other = new Person('Antoinette', 30);
-console.log(other.getDescription());
+console.log(other);

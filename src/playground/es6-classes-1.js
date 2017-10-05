@@ -10,16 +10,19 @@ class Person {
 
 class Student extends Person {
      constructor(name, age, major) {
-     super(name, age);	
-     this.major = major;
+       super(name, age);	
+       this.major = major;
      }
+     hasMajor(){
+     	return !!this.major;
+    }
 }
 
-const me = new Person('Michael', 26, 'Fine Art');
-console.log(me);
+const me = new Student('Michael', 26, 'Fine Art');
+console.log(me.hasMajor());
 
-const other = new Person('Antoinette', 30 );
-console.log(other);
+const other = new Student('Antoinette', 30 );
+console.log(other.hasMajor());
 
 
 

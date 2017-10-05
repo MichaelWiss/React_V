@@ -21,9 +21,18 @@ var Header = function (_React$Component) {
 		key: 'render',
 		value: function render() {
 			return React.createElement(
-				'p',
+				'div',
 				null,
-				'This is from the Header'
+				React.createElement(
+					'h1',
+					null,
+					'Indecision'
+				),
+				React.createElement(
+					'h2',
+					null,
+					'Put Your Life in the Hands of a Computer'
+				)
 			);
 		}
 	}]);
@@ -47,14 +56,9 @@ var Action = function (_React$Component2) {
 				'div',
 				null,
 				React.createElement(
-					'h1',
+					'button',
 					null,
-					'Indecision'
-				),
-				React.createElement(
-					'h2',
-					null,
-					'Put Your Life in the Hands of a Computer'
+					'What Should I do?'
 				)
 			);
 		}

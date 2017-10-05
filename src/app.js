@@ -1,16 +1,20 @@
 class Header extends React.Component {
 	render() {
-		return <p>This is from the Header</p>  
+		return (
+		 <div>
+		     <h1>Indecision</h1>
+		     <h2>Put Your Life in the Hands of a Computer</h2>
+		  </div> 
+		);  
 	}
 }
 
 class Action extends React.Component {
 	render() {
 		return (
-		  <div>
-		     <h1>Indecision</h1>
-		     <h2>Put Your Life in the Hands of a Computer</h2>
-		  </div>
+		   <div>
+		      <button>What Should I do?</button>
+		   </div>
 		);  
 	}
 }

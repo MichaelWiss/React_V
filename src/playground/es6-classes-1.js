@@ -1,14 +1,19 @@
 class Person {
-   constructor(name) {
+   constructor(name = 'Anonymous', age='0') {
    	 this.name = name;
+   	 this.age = age;
    }
+   getDescription() {
+   	return `${ this.name } is ${ this.age } years old.`;
+   }
+
 }
 
-const me = new Person('Michael');
-console.log(me);
+const me = new Person('Michael', 26);
+console.log(me.getDescription());
 
-const other = new Person('Antoinette');
-console.log(other);
+const other = new Person('Antoinette', 30 );
+console.log(other.getDescription());
 
 
 

@@ -8,6 +8,10 @@ class Person {
    }
 }
 
+class Student extends Person {
+
+}
+
 const me = new Person('Michael', 26);
 console.log(me.getDescription());
 

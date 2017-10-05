@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -18,15 +18,61 @@ var Header = function (_React$Component) {
 	}
 
 	_createClass(Header, [{
-		key: "render",
+		key: 'render',
 		value: function render() {
 			return React.createElement(
-				"p",
+				'p',
 				null,
-				"This is from the Header"
+				'This is from the Header'
 			);
 		}
 	}]);
 
 	return Header;
 }(React.Component);
+
+var Action = function (_React$Component2) {
+	_inherits(Action, _React$Component2);
+
+	function Action() {
+		_classCallCheck(this, Action);
+
+		return _possibleConstructorReturn(this, (Action.__proto__ || Object.getPrototypeOf(Action)).apply(this, arguments));
+	}
+
+	_createClass(Action, [{
+		key: 'render',
+		value: function render() {
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'h1',
+					null,
+					'Indecision'
+				),
+				React.createElement(
+					'h2',
+					null,
+					'Put Your Life in the Hands of a Computer'
+				)
+			);
+		}
+	}]);
+
+	return Action;
+}(React.Component);
+
+var jsx = React.createElement(
+	'div',
+	null,
+	React.createElement(
+		'h1',
+		null,
+		'Title'
+	),
+	React.createElement(Header, null),
+	React.createElement(Action, null)
+);
+
+ReactDOM.render(jsx, document.getElementById('app'));

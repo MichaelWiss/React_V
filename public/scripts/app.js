@@ -22,12 +22,13 @@ var IndecisionApp = function (_React$Component) {
 		value: function render() {
 			var title = 'Indecision';
 			var subtitle = 'Put Your Life in the Hands of a Computer';
+			var options = ['Thing One', 'Thing Two', 'Thing Three'];
 			return React.createElement(
 				'div',
 				null,
 				React.createElement(Header, { title: title, subtitle: subtitle }),
 				React.createElement(Action, null),
-				React.createElement(Options, null),
+				React.createElement(Options, { options: options }),
 				React.createElement(AddOption, null)
 			);
 		}
@@ -111,7 +112,8 @@ var Options = function (_React$Component4) {
 			return React.createElement(
 				'div',
 				null,
-				React.createElement(Option, null)
+				React.createElement(Option, null),
+				this.props.options.length
 			);
 		}
 	}]);

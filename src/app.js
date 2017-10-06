@@ -44,7 +44,7 @@ class Action extends React.Component {
 
 class Options extends React.Component {
     handleRemove(){
-    	aler
+    	alert('handleRemove');
     }
 	render() {
 		return (

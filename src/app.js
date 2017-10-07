@@ -72,8 +72,8 @@ class Option extends React.Component {
 
 class AddOption extends React.Component {
 	handleAddOption(){
-		if (option) {
-			alert(option);
+		if (option.value) {
+			alert(option.value);
 		}
 	}; 
 	onFormSubmit (e) => {

@@ -43,7 +43,12 @@ class Action extends React.Component {
 }
 
 class Options extends React.Component {
+	constructor(props) {
+      super(props);
+      this.handleRemove = this.handleRemove.bind(this);
+	}
     handleRemove(){
+    	console.log(this.props.options);
     	alert('handleRemove');
     }
 	render() {
@@ -71,26 +76,19 @@ class Option extends React.Component {
 
 
 class AddOption extends React.Component {
-	handleAddOption(){
-		if (option.value) {
-			alert(option.value);
-		}
-	}; 
-	onFormSubmit (e) => {
+	handleAddOption(e){
 		e.preventDefault();
 
-        const option = e.target.elements.option.value;
+        const option = e.target.elements.option.value.trim();
 
         if (option) {
-  	    app.options.push(option);
-  	    e.target.elements.option.value = '';
-  	    render();
+        alert(option);	
        }
 	}
 	render() {
 		return (
 			<div>
-			  <form onSubmit={onFormSubmit}>
+			  <form onSubmit={this.handleAddOption}>
                 <input type="text" name="option"/>
                  <button>Add Option</button>
 	          </form>

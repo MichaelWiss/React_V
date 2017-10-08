@@ -1,4 +1,18 @@
 class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this
+  }
+  handleAddOne() {
+    console.log('handleAddOne');
+  }
+  handleMinusOne() {
+    console.log('handleMinusOne');
+  }
+  handleReset() {
+    console.log(handleReset);
+  }
+
   render() {
     return (
       <div>
@@ -11,7 +25,9 @@ class Counter extends React.Component {
   }
 }
 
-ReactDOM,render(<Counter />, document.getElementById('app')); 
+
+
+ReactDOM.render(<Counter />, document.getElementById('app')); 
 
 
 

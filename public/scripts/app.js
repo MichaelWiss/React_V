@@ -11,13 +11,41 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Counter = function (_React$Component) {
   _inherits(Counter, _React$Component);
 
-  function Counter() {
+  function Counter(props) {
     _classCallCheck(this, Counter);
 
-    return _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this, props));
+
+    _this;
+    return _this;
   }
 
   _createClass(Counter, [{
+    key: 'handleAddOne',
+    value: function handleAddOne() {
+      console.log('handleAddOne');
+    }
+  }, {
+    key: 'handleMinusOne',
+    value: function handleMinusOne() {
+      console.log('handleMinusOne');
+    }
+  }, {
+    key: 'handleReset',
+    value: function (_handleReset) {
+      function handleReset() {
+        return _handleReset.apply(this, arguments);
+      }
+
+      handleReset.toString = function () {
+        return _handleReset.toString();
+      };
+
+      return handleReset;
+    }(function () {
+      console.log(handleReset);
+    })
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -50,7 +78,7 @@ var Counter = function (_React$Component) {
   return Counter;
 }(React.Component);
 
-ReactDOM, render(React.createElement(Counter, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
 
 // let count = 0;
 // const addOne = () => {

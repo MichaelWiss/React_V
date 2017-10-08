@@ -16,7 +16,9 @@ var Counter = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this, props));
 
-    _this;
+    _this.handleAddOne = _this.handleAddOne.bind(_this);
+    _this.handleMinusOne = _this.handleMinusOne.bind(_this);
+    _this.handleReset = _this.handleReset.bind(_this);
     return _this;
   }
 
@@ -32,19 +34,9 @@ var Counter = function (_React$Component) {
     }
   }, {
     key: 'handleReset',
-    value: function (_handleReset) {
-      function handleReset() {
-        return _handleReset.apply(this, arguments);
-      }
-
-      handleReset.toString = function () {
-        return _handleReset.toString();
-      };
-
-      return handleReset;
-    }(function () {
-      console.log(handleReset);
-    })
+    value: function handleReset() {
+      console.log('handleReset');
+    }
   }, {
     key: 'render',
     value: function render() {
@@ -58,17 +50,17 @@ var Counter = function (_React$Component) {
         ),
         React.createElement(
           'button',
-          null,
+          { onClick: this.handleAddOne },
           '+1'
         ),
         React.createElement(
           'button',
-          null,
+          { onClick: this.handleMinusOne },
           '-1'
         ),
         React.createElement(
           'button',
-          null,
+          { onClick: this.handleReset },
           'reset'
         )
       );

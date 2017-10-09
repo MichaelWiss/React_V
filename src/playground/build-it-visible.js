@@ -1,6 +1,10 @@
-class visibility extends React.Component {
-  
+class visibilityToggle extends React.Component {
+     render() {
+       return <p>test</p>
+     }
 }
+
+ReactDOM(<VisibilityToggle />, document.getElementById('app'));
 
 let visibility = false;
 

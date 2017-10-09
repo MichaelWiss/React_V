@@ -1,3 +1,7 @@
+class visibility extends React.Component {
+  
+}
+
 let visibility = false;
 
 const toggleVisibility = () => {

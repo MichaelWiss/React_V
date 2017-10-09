@@ -11,19 +11,52 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var VisibilityToggle = function (_React$Component) {
   _inherits(VisibilityToggle, _React$Component);
 
-  function VisibilityToggle() {
+  function VisibilityToggle(props) {
     _classCallCheck(this, VisibilityToggle);
 
-    return _possibleConstructorReturn(this, (VisibilityToggle.__proto__ || Object.getPrototypeOf(VisibilityToggle)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (VisibilityToggle.__proto__ || Object.getPrototypeOf(VisibilityToggle)).call(this, props));
+
+    _this.handleToggleVisibility = _this.handleToggleVisibility.bind(_this);
+    _this.state = {
+      visibility: false
+    };
+    return _this;
   }
 
   _createClass(VisibilityToggle, [{
+    key: 'handleToggleVisibility',
+    value: function handleToggleVisibility() {
+      this.setState(function (prevState) {
+        return {
+          visibility: !prevState.visibility
+        };
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
-        'p',
+        'div',
         null,
-        'test'
+        React.createElement(
+          'h1',
+          null,
+          'Visibility Toggle'
+        ),
+        React.createElement(
+          'button',
+          { onClick: this.handleToggleVisibility },
+          this.state.visibility ? 'Hide details' : 'Show details'
+        ),
+        this.state.visibility && React.createElement(
+          'div',
+          null,
+          React.createElement(
+            'p',
+            null,
+            'Hey. These are some details you can now see!'
+          )
+        )
       );
     }
   }]);
@@ -41,19 +74,19 @@ ReactDOM.render(React.createElement(VisibilityToggle, null), document.getElement
 // };
 
 // const render = () => {
-//   const jsx = (
-//     <div>
-//       <h1>Visibility Toggle</h1>
-//       <button onClick={toggleVisibility}>
-//         {visibility ? 'Hide details' : 'Show details'}
-//       </button>
-//       {visibility && (
-//         <div>
-//           <p>Hey. These are some details you can now see!</p>
-//         </div>
-//       )}
-//     </div>
-//   );
+// const jsx = (
+//   <div>
+//     <h1>Visibility Toggle</h1>
+//     <button onClick={toggleVisibility}>
+//       {visibility ? 'Hide details' : 'Show details'}
+//     </button>
+//     {visibility && (
+//       <div>
+//         <p>Hey. These are some details you can now see!</p>
+//       </div>
+//     )}
+//   </div>
+// );
 
 //   ReactDOM.render(jsx, document.getElementById('app'));
 // };

@@ -22,10 +22,15 @@ class Counter extends React.Component {
         count: prevState.count -1
       };
     });
-    
+
     console.log('handleMinusOne');
   }
   handleReset() {
+    this.setState((prevState) => {
+      return {
+        count: prevState.count= 0
+      };
+    });
     console.log('handleReset');
   }
 

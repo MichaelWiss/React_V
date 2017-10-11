@@ -12,7 +12,7 @@ class IndecisionApp extends React.Component {
 		return (
 			<div>
 			  <Header title={title} subtitle={subtitle} />
-			  <Action />
+			  <Action hasOptions={this.state.options.length > 0} />
 			  <Options options={this.state.options} />
 			  <AddOption />
 			</div>
@@ -42,7 +42,12 @@ class Action extends React.Component {
 	render() {
 		return (
 		   <div>
-		      <button onClick={this.handlePick}>What Should I do?</button>
+		      <button 
+		        onClick={this.handlePick}
+		        disabled={!this.props.hasOptions}
+		        >
+		          What Should I do?
+		        </button>
 		   </div>
 		);  
 	}

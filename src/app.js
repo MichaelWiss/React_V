@@ -1,13 +1,18 @@
 class IndecisionApp extends React.Component {
+	constructor(props) {
+		super(props) {
+			this.state = {
+              options = ['Thing One', 'Thing Two', 'Thing Three']
+			};
+		}
 	render() {
 		const title = 'Indecision';
 		const subtitle = 'Put Your Life in the Hands of a Computer';
-		const options = ['Thing One', 'Thing Two', 'Thing Three' ]; 
 		return (
 			<div>
 			  <Header title={title} subtitle={subtitle} />
 			  <Action />
-			  <Options options={options} />
+			  <Options options={this.state.options} />
 			  <AddOption />
 			</div>
 		);

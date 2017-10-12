@@ -149,39 +149,37 @@ var Action = function Action(props) {
 // 	}
 // }
 
-var Options = function (_React$Component3) {
-	_inherits(Options, _React$Component3);
+var Options = function Options(props) {
+	return React.createElement(
+		'div',
+		null,
+		React.createElement(
+			'button',
+			{ onClick: props.handleDeleteOptions },
+			'Remove options'
+		),
+		React.createElement(Option, null),
+		props.options.map(function (option) {
+			return React.createElement(Option, { key: option, optionText: option });
+		})
+	);
+};
 
-	function Options() {
-		_classCallCheck(this, Options);
+// class Options extends React.Component {
+// 	render() {
+// 		return (
+//          <div>
+//          <button onClick={this.props.handleDeleteOptions}>Remove options</button>
+//           <Option /> 
+//           {this.props.options.map((option) => <Option key={option} optionText={option} />)
+//           }       
+//          </div>
+// 		);
+// 	}
+// }
 
-		return _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).apply(this, arguments));
-	}
-
-	_createClass(Options, [{
-		key: 'render',
-		value: function render() {
-			return React.createElement(
-				'div',
-				null,
-				React.createElement(
-					'button',
-					{ onClick: this.props.handleDeleteOptions },
-					'Remove options'
-				),
-				React.createElement(Option, null),
-				this.props.options.map(function (option) {
-					return React.createElement(Option, { key: option, optionText: option });
-				})
-			);
-		}
-	}]);
-
-	return Options;
-}(React.Component);
-
-var Option = function (_React$Component4) {
-	_inherits(Option, _React$Component4);
+var Option = function (_React$Component3) {
+	_inherits(Option, _React$Component3);
 
 	function Option() {
 		_classCallCheck(this, Option);
@@ -203,19 +201,19 @@ var Option = function (_React$Component4) {
 	return Option;
 }(React.Component);
 
-var AddOption = function (_React$Component5) {
-	_inherits(AddOption, _React$Component5);
+var AddOption = function (_React$Component4) {
+	_inherits(AddOption, _React$Component4);
 
 	function AddOption(props) {
 		_classCallCheck(this, AddOption);
 
-		var _this5 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
+		var _this4 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
 
-		_this5.handleAddOption = _this5.handleAddOption.bind(_this5);
-		_this5.state = {
+		_this4.handleAddOption = _this4.handleAddOption.bind(_this4);
+		_this4.state = {
 			error: undefined
 		};
-		return _this5;
+		return _this4;
 	}
 
 	_createClass(AddOption, [{

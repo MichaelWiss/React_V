@@ -42,7 +42,7 @@ class IndecisionApp extends React.Component {
 
 		return (
 			<div>
-			  <Header title={title} subtitle={subtitle} />
+			  <Header subtitle={subtitle} />
 			  <Action   
 			    hasOptions={this.state.options.length > 0}
                 handlePick={this.handlePick}
@@ -66,6 +66,10 @@ const Header = (props) => {
 		  <h1>{props.subtitle}</h1>
 		</div>
 		);
+};
+
+Header.defaultProps = {
+	title: 'some default!'
 };
 
 

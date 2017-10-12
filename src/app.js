@@ -1,3 +1,5 @@
+//stateless functional component
+
 class IndecisionApp extends React.Component {
 	constructor(props) {
 		super(props);
@@ -144,8 +146,17 @@ class AddOption extends React.Component {
 	}
 } 
 
+const User = () => {
+   return (
+   	  <div>
+   	    <p>Name: </p>
+   	    <p>Age: </p>
+   	  </div>
+   	)
+};
 
 
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
+
+ReactDOM.render(<User />, document.getElementById('app'));
 
 

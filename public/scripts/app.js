@@ -40,7 +40,9 @@ var IndecisionApp = function (_React$Component) {
 	}, {
 		key: 'handleDeleteOption',
 		value: function handleDeleteOption(option) {
-			console.log('hdo', option);
+			this.setState(function () {
+				return {};
+			});
 		}
 	}, {
 		key: 'handlePick',

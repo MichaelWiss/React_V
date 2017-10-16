@@ -70,17 +70,32 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_js__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__utils_js__);
+//import './utils.js';
+
 
 
 
 console.log('app.js is running!!');
 
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* square */](3));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* add */](1034, 27));
+
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 console.log('utils.js is running');
+
+const square = (x) => x * x ;
+/* harmony export (immutable) */ __webpack_exports__["b"] = square;
+
+
+const add = (a, b) => a + b ;
+/* harmony export (immutable) */ __webpack_exports__["a"] = add;
+
+
+//export { square, add };
 
 
 /***/ })

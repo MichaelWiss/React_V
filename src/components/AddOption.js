@@ -1,7 +1,9 @@
 import React from 'react';
 
 
-class AddOption extends React.Component {
+
+
+export default class AddOption extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleAddOption = this.handleAddOption.bind(this);
@@ -11,7 +13,7 @@ class AddOption extends React.Component {
 	}
 	handleAddOption(e){
 		e.preventDefault();
-
+        
         const option = e.target.elements.option.value.trim();
         const error = this.props.handleAddOption(option);
 
@@ -33,8 +35,8 @@ class AddOption extends React.Component {
 			</div>
 		);
 	}
-}; 
+}
 
-export default AddOption;
+
 
 

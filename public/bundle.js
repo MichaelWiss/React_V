@@ -959,6 +959,8 @@ module.exports = getActiveElement;
 "use strict";
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
@@ -967,14 +969,199 @@ var _reactDom = __webpack_require__(18);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _AddOptions = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/AddOptions\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _AddOptions2 = _interopRequireDefault(_AddOptions);
+
+var _Option = __webpack_require__(32);
+
+var _Option2 = _interopRequireDefault(_Option);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var template = _react2.default.createElement(
-	'p',
-	null,
-	'This is JSX from WEBPACK!'
-);
-_reactDom2.default.render(template, document.getElementById('app'));
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var IndecisionApp = function (_React$Component) {
+	_inherits(IndecisionApp, _React$Component);
+
+	function IndecisionApp(props) {
+		_classCallCheck(this, IndecisionApp);
+
+		var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, props));
+
+		_this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
+		_this.handlePick = _this.handlePick.bind(_this);
+		_this.handleAddOption = _this.handleAddOption.bind(_this);
+		_this.handleDeleteOption = _this.handleDeleteOption.bind(_this);
+		_this.state = {
+			options: []
+		};
+		return _this;
+	}
+
+	_createClass(IndecisionApp, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			try {
+				var json = localStorage.getItem('options');
+				var options = JSON.parse(json);
+
+				if (options) {
+					this.setState(function () {
+						return { options: options };
+					});
+				}
+			} catch (e) {
+				//do nothing
+			}
+		}
+	}, {
+		key: 'componentDidUpdate',
+		value: function componentDidUpdate(prevProps, prevState) {
+			if (prevState.options.length !== this.state.options.length) {
+				var json = JSON.stringify(this.state.options);
+				localStorage.setItem('options', json);
+			}
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			console.log('componentWillUnmount!');
+		}
+	}, {
+		key: 'handleDeleteOptions',
+		value: function handleDeleteOptions() {
+			this.setState(function () {
+				return { options: [] };
+			});
+		}
+	}, {
+		key: 'handleDeleteOption',
+		value: function handleDeleteOption(optionToRemove) {
+			this.setState(function (prevState) {
+				return {
+					options: prevState.options.filter(function (option) {
+						return optionToRemove !== option;
+					})
+				};
+			});
+		}
+	}, {
+		key: 'handlePick',
+		value: function handlePick() {
+			var randomNum = Math.floor(Math.random() * this.state.options.length);
+			var option = this.state.options[randomNum];
+			alert(option);
+		}
+	}, {
+		key: 'handleAddOption',
+		value: function handleAddOption(option) {
+			if (!option) {
+				return 'Enter valid item to add item';
+			} else if (this.state.options.indexOf(option) > -1) {
+				return 'This option already exists';
+			}
+
+			this.setState(function (prevState) {
+				return {
+					options: prevState.options.concat([option])
+				};
+			});
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var title = 'Indecision';
+			var subtitle = 'Put Your Life in the Hands of a Computer';
+
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(Header, { subtitle: subtitle }),
+				_react2.default.createElement(Action, {
+					hasOptions: this.state.options.length > 0,
+					handlePick: this.handlePick
+				}),
+				_react2.default.createElement(Options, {
+					options: this.state.options,
+					handleDeleteOptions: this.handleDeleteOptions,
+					handleDeleteOption: this.handleDeleteOption
+				}),
+				_react2.default.createElement(_AddOptions2.default, {
+					handleAddOption: this.handleAddOption
+				})
+			);
+		}
+	}]);
+
+	return IndecisionApp;
+}(_react2.default.Component);
+
+var Header = function Header(props) {
+	return _react2.default.createElement(
+		'div',
+		null,
+		' test text',
+		_react2.default.createElement(
+			'h1',
+			null,
+			props.title
+		),
+		props.subtitle && _react2.default.createElement(
+			'h1',
+			null,
+			props.subtitle
+		)
+	);
+};
+
+Header.defaultProps = {
+	title: 'some default!'
+};
+
+var Action = function Action(props) {
+	return _react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(
+			'button',
+			{
+				onClick: props.handlePick,
+				disabled: !props.hasOptions
+			},
+			'What Should I do?'
+		)
+	);
+};
+
+var Options = function Options(props) {
+	return _react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(
+			'button',
+			{ onClick: props.handleDeleteOptions },
+			'Remove options'
+		),
+		props.options.length === 0 && _react2.default.createElement(
+			'p',
+			null,
+			'Please add an option to get started'
+		),
+		props.options.map(function (option) {
+			return _react2.default.createElement(_Option2.default, {
+				key: option,
+				optionText: option,
+				handleDeleteOption: props.handleDeleteOption });
+		})
+	);
+};
+
+_reactDom2.default.render(_react2.default.createElement(IndecisionApp, null), document.getElementById('app'));
 
 /***/ }),
 /* 16 */
@@ -21174,6 +21361,12 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: SyntaxError: Unexpected token (3:15)\n\n\u001b[0m \u001b[90m 1 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mReact\u001b[39m from \u001b[32m'react'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 2 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 3 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mconst\u001b[39m \u001b[33mOption\u001b[39m \u001b[33m=\u001b[39m (props) \u001b[33m=>\u001b[39m {\n \u001b[90m   | \u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 4 | \u001b[39m\t\u001b[36mreturn\u001b[39m (\n \u001b[90m 5 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 6 | \u001b[39m            {props\u001b[33m.\u001b[39moptionText}\u001b[0m\n");
 
 /***/ })
 /******/ ]);

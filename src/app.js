@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AddOption from './components/AddOption';
 import Option from './components/Option';
+import Header from './components/Header';
 
 	class IndecisionApp extends React.Component {
 	constructor(props) {
@@ -92,18 +93,8 @@ import Option from './components/Option';
 
 
 
-const Header = (props) => {
-	return (
-		<div> test text
-		  <h1>{props.title}</h1>
-		  {props.subtitle && <h1>{props.subtitle}</h1>}
-		</div>
-		);
-};
 
-Header.defaultProps = {
-	title: 'some default!'
-};
+
 
 
 

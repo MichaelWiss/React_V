@@ -9,6 +9,7 @@ class OldSyntax {
 	constructor() {
 		this.name = 'Mike';
 	}
+	
 }
 
 const oldSyntax = new OldSyntax();

@@ -965,6 +965,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+	const template = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', {}, 'testing');
+	__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(template, document.getElementById('app'));
+
 /***/ }),
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {

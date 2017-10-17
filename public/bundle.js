@@ -21379,7 +21379,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = function (props) {
+var Option = function Option(props) {
   return _react2.default.createElement(
     'div',
     null,
@@ -21395,6 +21395,8 @@ exports.default = function (props) {
     )
   );
 };
+
+exports.default = Option;
 
 /***/ }),
 /* 33 */

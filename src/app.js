@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AddOption from './components/AddOptions';
+import AddOption from './components/AddOption';
 import Option from './components/Option';
 
 	class IndecisionApp extends React.Component {

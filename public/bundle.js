@@ -969,9 +969,9 @@ var _reactDom = __webpack_require__(18);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _AddOptions = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/AddOptions\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _AddOption = __webpack_require__(33);
 
-var _AddOptions2 = _interopRequireDefault(_AddOptions);
+var _AddOption2 = _interopRequireDefault(_AddOption);
 
 var _Option = __webpack_require__(32);
 
@@ -1091,7 +1091,7 @@ var IndecisionApp = function (_React$Component) {
 					handleDeleteOptions: this.handleDeleteOptions,
 					handleDeleteOption: this.handleDeleteOption
 				}),
-				_react2.default.createElement(_AddOptions2.default, {
+				_react2.default.createElement(_AddOption2.default, {
 					handleAddOption: this.handleAddOption
 				})
 			);
@@ -21364,9 +21364,123 @@ module.exports = function() {
 
 /***/ }),
 /* 32 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unexpected token (3:15)\n\n\u001b[0m \u001b[90m 1 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mReact\u001b[39m from \u001b[32m'react'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 2 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 3 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mconst\u001b[39m \u001b[33mOption\u001b[39m \u001b[33m=\u001b[39m (props) \u001b[33m=>\u001b[39m {\n \u001b[90m   | \u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 4 | \u001b[39m\t\u001b[36mreturn\u001b[39m (\n \u001b[90m 5 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 6 | \u001b[39m            {props\u001b[33m.\u001b[39moptionText}\u001b[0m\n");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (props) {
+  return _react2.default.createElement(
+    'div',
+    null,
+    props.optionText,
+    _react2.default.createElement(
+      'button',
+      {
+        onClick: function onClick(e) {
+          props.handleDeleteOption(props.optionText);
+        }
+      },
+      'remove'
+    )
+  );
+};
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AddOption = function (_React$Component) {
+	_inherits(AddOption, _React$Component);
+
+	function AddOption(props) {
+		_classCallCheck(this, AddOption);
+
+		var _this = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
+
+		_this.handleAddOption = _this.handleAddOption.bind(_this);
+		_this.state = {
+			error: undefined
+		};
+		return _this;
+	}
+
+	_createClass(AddOption, [{
+		key: 'handleAddOption',
+		value: function handleAddOption(e) {
+			e.preventDefault();
+
+			var option = e.target.elements.option.value.trim();
+			var error = this.props.handleAddOption(option);
+
+			this.setState(function () {
+				return { error: error };
+			});
+
+			if (!error) {
+				e.target.elements.option.value = '';
+			}
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
+				this.state.error && _react2.default.createElement(
+					'p',
+					null,
+					this.state.error
+				),
+				_react2.default.createElement(
+					'form',
+					{ onSubmit: this.handleAddOption },
+					_react2.default.createElement('input', { type: 'text', name: 'option' }),
+					_react2.default.createElement(
+						'button',
+						null,
+						'Add Option'
+					)
+				)
+			);
+		}
+	}]);
+
+	return AddOption;
+}(_react2.default.Component);
+
+exports.default = AddOption;
 
 /***/ })
 /******/ ]);

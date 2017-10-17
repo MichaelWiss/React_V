@@ -967,26 +967,6 @@ var _reactDom = __webpack_require__(18);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _AddOption = __webpack_require__(33);
-
-var _AddOption2 = _interopRequireDefault(_AddOption);
-
-var _Option = __webpack_require__(32);
-
-var _Option2 = _interopRequireDefault(_Option);
-
-var _Header = __webpack_require__(34);
-
-var _Header2 = _interopRequireDefault(_Header);
-
-var _Action = __webpack_require__(35);
-
-var _Action2 = _interopRequireDefault(_Action);
-
-var _Options = __webpack_require__(36);
-
-var _Options2 = _interopRequireDefault(_Options);
-
 var _IndecisionApp = __webpack_require__(37);
 
 var _IndecisionApp2 = _interopRequireDefault(_IndecisionApp);

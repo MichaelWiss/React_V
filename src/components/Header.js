@@ -1,13 +1,11 @@
 import React from 'react';
 
-const Header = (props) => {
-	return (
+const Header = (props) =>  (
 		<div>
 		  <h1>{props.title}</h1>
 		  {props.subtitle && <h1>{props.subtitle}</h1>}
 		</div>
-		);
-};
+		); 
 
 
 Header.defaultProps = {

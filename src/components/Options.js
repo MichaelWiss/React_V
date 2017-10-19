@@ -15,7 +15,6 @@ const Options = (props) =>  (
             ))
           }       
          </div>
-
     );
 
 export default Options;

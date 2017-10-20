@@ -12,22 +12,16 @@ export default class IndecisionApp extends React.Component {
 	state = {
               options : [],
               selectedOption: undefined
-			};
-	
-
+	};
 	handleDeleteOptions = () => {
 			this.setState(() => ({ options: [] }));
 	};
 	handleClearSelectedOption = () => {
 		this.setState(() =>({ selectedOption: undefined }));
 	}
-	
-
-    handleDeleteOption = (optionToRemove) => {
+	handleDeleteOption = (optionToRemove) => {
     	this.setState((prevState) => ({
-           options: prevState.options.filter((option) => {
-             return optionToRemove !== option;
-           })
+           options: prevState.options.filter((option) => optionToRemove !== option)
     	}));
     };
 	handlePick = () => {
@@ -70,7 +64,7 @@ export default class IndecisionApp extends React.Component {
     console.log('componentWillUnmount');
   }
 	render() {
-		const title = 'Indecision';
+		
 		const subtitle = 'Put Your Life in the Hands of a Computer';
 
 		return (
@@ -89,14 +83,13 @@ export default class IndecisionApp extends React.Component {
             />
         <AddOption 
                 handleAddOption={this.handleAddOption}
-        />
-        </div>
+               />
+           </div>
         </div>
         <OptionModal 
                 selectedOption={this.state.selectedOption}
                 handleClearSelectedOption={this.handleClearSelectedOption}
         />
-    
 			</div>
 		);
 	}

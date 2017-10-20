@@ -1,14 +1,14 @@
 import React from 'react';
 import AddOption from './AddOption';
 import Action from './Action';
-import Option from './Option';
 import Header from './Header';
-import OptionModal from './OptionModal'
-
 import Options from './Options';
+import OptionModal from './OptionModal';
 
 
-class IndecisionApp extends React.Component {
+
+
+export default class IndecisionApp extends React.Component {
 	state = {
               options : [],
               selectedOption: undefined
@@ -81,6 +81,7 @@ class IndecisionApp extends React.Component {
           hasOptions={this.state.options.length > 0}
                 handlePick={this.handlePick}
         />
+        <div className="widget">
         <Options 
            options={this.state.options}
                  handleDeleteOptions={this.handleDeleteOptions}
@@ -89,6 +90,7 @@ class IndecisionApp extends React.Component {
         <AddOption 
                 handleAddOption={this.handleAddOption}
         />
+        </div>
         </div>
         <OptionModal 
                 selectedOption={this.state.selectedOption}
@@ -100,6 +102,6 @@ class IndecisionApp extends React.Component {
 	}
 }
 
-export default IndecisionApp;
+
 
 

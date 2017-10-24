@@ -14,8 +14,12 @@ const store = createStore((state = {count: 0 }, action) => {
          return {
     	count: state.count - decrementBy
     };
+    case 'SET':
+       return {
+       	count: action.count
+       };
     case 'RESET':
-         count: state.count = 0
+         count: 0
     default:
       return state;
   };
@@ -53,6 +57,11 @@ store.dispatch({
 
 store.dispatch({
   type: 'INCREMENT'
+});
+
+store.dispatch({
+	type: 'SET',
+	count: 101
 });
 
 

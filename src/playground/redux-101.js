@@ -8,12 +8,22 @@ const store = createStore((state = {count: 0 }, action) => {
 		  return {
       count: state.count + 1
     };
+    case 'DECREMENT':
+    return {
+    	count: state.count -1
+    };
+    case 'RESET':
+         count: state.count = 0
     default:
       return state;
-  }
+  };
 });
 
-console.log(store.getState());
+store.subscribe(() => {
+  console.log(store.getState());
+});
+
+
 
 //increment
 store.dispatch({
@@ -21,8 +31,24 @@ store.dispatch({
 });
 
 store.dispatch({
+  type: 'DECREMENT'
+});
+
+store.dispatch({
+  type: 'DECREMENT'
+});
+
+store.dispatch({
   type: 'INCREMENT'
 });
 
 
-console.log(store.getState());
+store.dispatch({
+	type: 'RESET'
+});
+
+store.dispatch({
+  type: 'INCREMENT'
+});
+
+

@@ -26,6 +26,10 @@ const setCount = ({ setCount = 1 } = {}) => ({
 });
 
 //resetCount
+const resetCount = ({ resetCount = 0 } = {}) => ({
+	type: 'RESET',
+	resetCount
+});
 
 
 
@@ -69,9 +73,7 @@ store.dispatch(incrementCount({ incrementBy: 5 }));
 
 
 
-store.dispatch({
-	type: 'RESET'
-});
+store.dispatch(resetCount());
 
 store.dispatch(decrementCount());
 

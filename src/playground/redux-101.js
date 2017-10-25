@@ -8,9 +8,9 @@ const add = ({ a, b}, c) => {
 
 console.log(add({ a: 1, b: 12 }, 100));
 
-const incrementCount = (payload = {}) => ({
+const incrementCount = ({ incrementBy =1 }= {}) => ({
       type: 'INCREMENT',
-      incrementBy: typeof payload.incrementBy === 'number' ? payload.incrementBy : 1
+      incrementBy
 });
 
 

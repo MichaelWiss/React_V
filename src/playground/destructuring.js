@@ -16,13 +16,21 @@
 //   console.log(`It's ${temperature} in ${city}.`);
 // }
 
-const book ={
-	title: 'Ego is the Enemy',
-	author: "Ryan Holiday",
-	publisher: {
-		name: 'Penguin'
-	}
-};
+// const book ={
+// 	title: 'Ego is the Enemy',
+// 	author: "Ryan Holiday",
+// 	publisher: {
+// 		name: 'Penguin'
+// 	}
+// };
 
-const { name: publisherName = 'self-published' } = book.publisher;
-  console.log(publisherName);
+// const { name: publisherName = 'self-published' } = book.publisher;
+//   console.log(publisherName);
+
+//array destructuring
+
+const address = ['1299 S Juniper St', 'Philadelphia', 'Pennsylvania', '19147'];
+
+const [street, city, state, zip] = address;
+
+console.log(`You are in ${city} ${state}.`);

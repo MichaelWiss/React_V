@@ -13,6 +13,11 @@ const incrementCount = ({ incrementBy =1 }= {}) => ({
       incrementBy
 });
 
+const decrementCount = () => ({
+	type: 'DECREMENT',
+
+});
+
 
 
 const store = createStore((state = {count: 0 }, action) => {
@@ -31,10 +36,12 @@ const store = createStore((state = {count: 0 }, action) => {
        	count: action.count
        };
     case 'RESET':
+        return {
          count: 0
+        };
     default:
       return state;
-  };
+  }
 });
 
 const unsubscribe = store.subscribe(() => {
@@ -48,32 +55,24 @@ const unsubscribe = store.subscribe(() => {
 //   type: 'INCREMENT',
 //   incrementBy: 15
 // });
+
 store.dispatch(incrementCount({ incrementBy: 5 }));
 
-store.dispatch(incrementCount());
 
 
-
-
-store.dispatch({
-  type: 'DECREMENT',
-  decrementBy: 3
-});
-
-store.dispatch({
-  type: 'DECREMENT'
-});
 
 store.dispatch({
 	type: 'RESET'
 });
 
-store.dispatch(incrementCount());
+store.dispatch(decrementCount());
 
 
-store.dispatch(incrementCount());
+store.dispatch(decrementCount({ decrementBy: 10 }));
 
-store.dispatch(incrementCount());
+
+
+
 
 
 store.dispatch({

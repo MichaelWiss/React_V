@@ -8,7 +8,7 @@ const add = ({ a, b}, c) => {
 
 console.log(add({ a: 1, b: 12 }, 100));
 
-const incrementCount = ({ incrementBy = 1 }= {}) => ({
+const incrementCount = ({ incrementBy = 1 } = {}) => ({
       type: 'INCREMENT',
       incrementBy
 });
@@ -18,6 +18,14 @@ const decrementCount = ({ decrementBy = 1} = {}) => ({
     decrementBy
 
 });
+
+//setCount
+const setCount = ({ setCount = 1 } = {}) => ({
+	type: 'SET',
+	setCount
+});
+
+//resetCount
 
 
 
@@ -33,7 +41,7 @@ const store = createStore((state = {count: 0 }, action) => {
     };
     case 'SET':
        return {
-       	count: action.count
+       	count: action.setCount
        };
     case 'RESET':
         return {
@@ -75,10 +83,7 @@ store.dispatch(decrementCount({ decrementBy: 10 }));
 
 
 
-store.dispatch({
-	type: 'SET',
-	count: 101
-});
+store.dispatch(setCount({ setCount: 200 }));
 
 
 

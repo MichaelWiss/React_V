@@ -8,13 +8,14 @@ const add = ({ a, b}, c) => {
 
 console.log(add({ a: 1, b: 12 }, 100));
 
-const incrementCount = ({ incrementBy =1 }= {}) => ({
+const incrementCount = ({ incrementBy = 1 }= {}) => ({
       type: 'INCREMENT',
       incrementBy
 });
 
-const decrementCount = () => ({
+const decrementCount = ({ decrementBy = 1} = {}) => ({
 	type: 'DECREMENT',
+    decrementBy
 
 });
 
@@ -27,9 +28,8 @@ const store = createStore((state = {count: 0 }, action) => {
       count: state.count + 1 + action.incrementBy
     };
         case 'DECREMENT':
-        const decrementBy = typeof action.decrementBy === 'number' ? action.decrementBy: 1;
          return {
-    	count: state.count - decrementBy
+    	count: state.count - action.decrementBy
     };
     case 'SET':
        return {

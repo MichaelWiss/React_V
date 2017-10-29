@@ -16,7 +16,6 @@ const incrementCount = ({ incrementBy = 1 } = {}) => ({
 const decrementCount = ({ decrementBy = 1} = {}) => ({
 	type: 'DECREMENT',
     decrementBy
-
 });
 
 //setCount

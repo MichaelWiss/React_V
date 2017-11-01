@@ -17,6 +17,8 @@ const filtersReducerDefaultState = {
    startDate: undefined,
    endDate: undefined,
 };
+
+
 const filtersReducer = (state= filtersReducerDefaultState, action) => {
    switch (action.type) {
       default:

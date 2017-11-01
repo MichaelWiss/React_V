@@ -4,12 +4,17 @@ import { createStore, combineReducers } from 'redux';
 
 const expensesReducerDefaultState = []; 
 
-const expensesReducer = (expensesReducerDefaultState , action) => {
+const expensesReducer = (state = expensesReducerDefaultState , action) => {
      switch (action.type) {
         default:
            return state;
      }   
 };
+
+//store creation
+const store = createStore(expensesReducer);
+
+console.log(store.getState());
 
 const demoState ={
    expenses: [{

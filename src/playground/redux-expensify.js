@@ -7,5 +7,11 @@ const demoState ={
    	note: 'This was the final payment for the address',
    	amount: 54500,
    	createdAt: 0
-   }]
+   }],
+   filters: {
+   	test: 'rent',
+   	sortBy: 'amount', //date or amount
+   	startDate: undefined,
+   	endDate: undefined
+   }
 };

@@ -12,7 +12,11 @@ const expensesReducer = (state = expensesReducerDefaultState , action) => {
 };
 
 //store creation
-const store = createStore(expensesReducer);
+const store = createStore(
+   combineReducers({
+      expenses: expensesReducer
+   })
+ );
 
 console.log(store.getState());
 

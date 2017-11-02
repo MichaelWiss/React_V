@@ -1,8 +1,23 @@
 import { createStore, combineReducers } from 'redux';
+import uuid from 'uuid';
 
 //expenses reducer
-const addExpense = () = ({
+const addExpense = (
+   { 
+      desription = '', 
+      note = '', 
+      amount= 0, 
+      createdAt = 0 
+   } = {}
+   ) => ({
     type: 'ADD_EXPENSE',
+    expense: {
+      id: uuid(),
+      description,
+      note,
+      amount,
+      createdAt
+    }
 });
 
 const expensesReducerDefaultState = []; 

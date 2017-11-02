@@ -1,6 +1,9 @@
 import { createStore, combineReducers } from 'redux';
 
 //expenses reducer
+const addExpense = () = ({
+    type: 'ADD_EXPENSE',
+});
 
 const expensesReducerDefaultState = []; 
 

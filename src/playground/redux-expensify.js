@@ -4,11 +4,11 @@ import uuid from 'uuid';
 //expenses reducer
 const addExpense = (
    { 
-      desription = '', 
+      description = '', 
       note = '', 
       amount= 0, 
       createdAt = 0 
-   } = {}
+     } = {}
    ) => ({
     type: 'ADD_EXPENSE',
     expense: {
@@ -60,7 +60,7 @@ store.subscribe(() => {
    console.log(store.getState());
 });
 
-store.dispatch(addExpense({ description: 'Rent' amount: 100 }));
+store.dispatch(addExpense({ description: 'Rent', amount: 100 }));
 
 
 

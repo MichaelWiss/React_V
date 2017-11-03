@@ -54,9 +54,14 @@ const store = createStore(
     })
  );
 
+store.subscribe(() => {
+   console.log(store.getState());
+});
+
+store.dispatch(addExpense({ description: 'Rent' amount: 100 }));
 
 
-console.log(store.getState());
+
 
 const demoState ={
    expenses: [{

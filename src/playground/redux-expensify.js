@@ -20,7 +20,7 @@ const addExpense = (
     }
 });
 
-const removeExpense = ({ id } ={}) => ({
+const removeExpense = ({ id } = {}) => ({
     type: 'REMOVE_EXPENSE',
     id 
 });
@@ -35,7 +35,7 @@ const expensesReducer = (state = expensesReducerDefaultState , action) => {
            action.expense
          ];
          case 'REMOVE_EXPENSE':
-          return state.filter(( id ) => id !== action.id);
+          return state.filter(({id}) => id !== action.id);
         default:
            return state;
      }   
@@ -73,7 +73,7 @@ store.subscribe(() => {
 const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100 }));
 const expenseTwo = store.dispatch(addExpense({ description: 'coffee', amount: 150}));
 const expenseThree = store.dispatch(addExpense({ description: 'Plant', amount: 73 }));
-store.dispatch(removeExpense({ id: expenseOne.expense.id }));
+const removeOne = store.dispatch(removeExpense({ id: expenseOne.expense.id }));
 
 const demoState ={
    expenses: [{

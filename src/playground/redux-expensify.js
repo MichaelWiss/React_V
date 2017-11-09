@@ -140,6 +140,7 @@ const store = createStore(
 
 store.subscribe(() => {
    const state = store.getState();
+   const visibleExpenses = getVisibleExpenseses(state.expenses, state.filters);
    console.log(store.getState());
 });
 

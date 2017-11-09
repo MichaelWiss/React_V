@@ -107,6 +107,9 @@ store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
 store.dispatch(setTextFilter('rent'));
 store.dispatch(setTextFilter());
 
+store.dispatch(sortByAmount());
+store.dispatch(sortByDate());
+
 
 
 const demoState ={

@@ -44,12 +44,12 @@ const sortByDate = () => ({
    type: 'SORT_BY_ DATE',
 });
 
-const setStartDate = (startDate = '') => ({
+const setStartDate = (startDate) => ({
    type: 'SET_START_DATE',
    startDate
 });
 
-const setEndDate = (endDate ='') => ({
+const setEndDate = (endDate) => ({
    type: 'SET_END_DATE',
    endDate
 }); 
@@ -121,6 +121,11 @@ const filtersReducer = (state= filtersReducerDefaultState, action) => {
       default:
         return state;
    }
+};
+
+//get visible expenses
+const getVisibleExpenses = (expenses, filters) => {
+   return expenses;
 };
 
 

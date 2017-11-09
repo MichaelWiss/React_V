@@ -31,6 +31,12 @@ const editExpense = (id, updates) => ({
     updates
 });
 
+const setTextFilter = (id, updates) => ({
+   type: 'SET_TEXT_FILTER',
+   id,
+   updates
+});
+
 const expensesReducerDefaultState = []; 
 
 const expensesReducer = (state = expensesReducerDefaultState , action) => {
@@ -68,6 +74,17 @@ const filtersReducerDefaultState = {
 
 const filtersReducer = (state= filtersReducerDefaultState, action) => {
    switch (action.type) {
+      case 'SET_TEXT_FILTER':
+      return state.map((text) => {
+         if (text.id === action.id) {
+          return {
+            ...text,
+            ...action.updates
+         };
+      } else {
+        return text;
+       }
+      }); 
       default:
         return state;
    }
@@ -93,7 +110,10 @@ const expenseThree = store.dispatch(addExpense({ description: 'Plant', amount: 7
 const removeOne = store.dispatch(removeExpense({ id: expenseOne.expense.id }));
 
 store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
+
 store.dispatch(setTextFilter('rent'));
+store.dispatch(setTextFilter());
+
 
 
 const demoState ={

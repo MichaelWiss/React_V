@@ -25,6 +25,8 @@ const removeExpense = ({ id } = {}) => ({
     id 
 });
 
+const editExpense = (id, updates) = 
+
 const expensesReducerDefaultState = []; 
 
 const expensesReducer = (state = expensesReducerDefaultState , action) => {
@@ -75,6 +77,8 @@ const expenseTwo = store.dispatch(addExpense({ description: 'coffee', amount: 15
 const expenseThree = store.dispatch(addExpense({ description: 'Plant', amount: 73 }));
 const removeOne = store.dispatch(removeExpense({ id: expenseOne.expense.id }));
 
+store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
+
 const demoState ={
    expenses: [{
    	id:'kkhdfhoajfoa',
@@ -97,7 +101,9 @@ const user = {
 };
 
 console.log({
-  ...user
+  ...user,
+  age: 34,
+  location: 'New York'
 });
 
 

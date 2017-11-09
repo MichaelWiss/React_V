@@ -31,10 +31,9 @@ const editExpense = (id, updates) => ({
     updates
 });
 
-const setTextFilter = (id, updates) => ({
+const setTextFilter = (text = '') => ({
    type: 'SET_TEXT_FILTER',
-   id,
-   updates
+   text,
 });
 
 const expensesReducerDefaultState = []; 
@@ -75,16 +74,10 @@ const filtersReducerDefaultState = {
 const filtersReducer = (state= filtersReducerDefaultState, action) => {
    switch (action.type) {
       case 'SET_TEXT_FILTER':
-      return state.map((text) => {
-         if (text.id === action.id) {
           return {
-            ...text,
-            ...action.updates
+            ...state,
+            text: action.text
          };
-      } else {
-        return text;
-       }
-      }); 
       default:
         return state;
    }

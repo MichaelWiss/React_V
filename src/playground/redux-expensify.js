@@ -25,7 +25,11 @@ const removeExpense = ({ id } = {}) => ({
     id 
 });
 
-const editExpense = (id, updates) = 
+const editExpense = (id, updates) => ({
+    type: 'EDIT_EXPENSE',
+    id,
+    updates
+});
 
 const expensesReducerDefaultState = []; 
 
@@ -38,6 +42,7 @@ const expensesReducer = (state = expensesReducerDefaultState , action) => {
          ];
          case 'REMOVE_EXPENSE':
           return state.filter(({id}) => id !== action.id);
+         case  
         default:
            return state;
      }   

@@ -124,8 +124,10 @@ const filtersReducer = (state= filtersReducerDefaultState, action) => {
 };
 
 //get visible expenses
-const getVisibleExpenses = (expenses, filters) => {
-   return expenses;
+const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
+   return expenses.filter((expenses) => {
+
+   });
 };
 
 
@@ -144,8 +146,8 @@ store.subscribe(() => {
    console.log(visibleExpenses);
 });
 
-// const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100 }));
-// const expenseTwo = store.dispatch(addExpense({ description: 'coffee', amount: 150}));
+const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100 }));
+const expenseTwo = store.dispatch(addExpense({ description: 'coffee', amount: 150}));
 // const expenseThree = store.dispatch(addExpense({ description: 'Plant', amount: 73 }));
 // const removeOne = store.dispatch(removeExpense({ id: expenseOne.expense.id }));
 

@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const info = () => (
+const info = (props) => (
    <div>
      <h1>info</h1>
      <p>The info is: {props.info}</p>

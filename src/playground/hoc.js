@@ -19,7 +19,7 @@ const withAdminWarning = (WrappedComponent) => {
    return (props) => (
    	  <div>
    	  <p>This is private info please don't share</p>
-   	  <WrappedComponent />
+   	  <WrappedComponent {...props} />
    	  </div>
    	);
 };

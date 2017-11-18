@@ -29,10 +29,8 @@ const requireAuthentication = (WrappedComponent) => {
     <div>
     { props.isAuthenticated ? (<WrappedComponent {...props} /> 
     	) : (
-    	 <p>
-    	)
+    	<p>Please Login</p>
     )}
-     />
     </div>
    );
 };

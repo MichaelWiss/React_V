@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const ExpenseListitem = (props) => (
+const ExpenseListItem = ({ description, amount, createdAt }) => (
   <div>
-    <h1>Expense List Item</h1>
-    {props.filters.text}
-    {props.expenses}
+    <h3>Expense List Item</h3>
+    <p></p>
   </div>
 );

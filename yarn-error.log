@@ -15,7 +15,7 @@ Platform:
 
 npm manifest: 
   {
-    "name": "React_U",
+    "name": "React_V",
     "version": "1.0.0",
     "main": "index.js",
     "repository": "https://github.com/MichaelWiss/React_U.git",

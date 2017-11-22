@@ -18,7 +18,7 @@ npm manifest:
     "name": "React_V",
     "version": "1.0.0",
     "main": "index.js",
-    "repository": "https://github.com/MichaelWiss/React_U.git",
+    "repository": "https://github.com/MichaelWiss/React_V.git",
     "author": "MichaelWiss <michael.wiss@gmail.com>",
     "license": "MIT",
     "dependencies": {

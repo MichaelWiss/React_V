@@ -7,4 +7,4 @@ const ExpenseListFilters = () => (
 	</div>  
 );
 
-export default ExpenseListFilters;
+export default connect()(ExpenseListFilters);

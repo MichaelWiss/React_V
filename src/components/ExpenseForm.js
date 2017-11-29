@@ -3,7 +3,8 @@ import React from 'react';
 export default class ExpenseForm extends React.Component {
 	state = {
 		description: '',
-		note: ''
+		note: '',
+		amount: ''
 	};
 	onDescriptionChange = (e) => {
       const description = e.target.value;
@@ -26,8 +27,9 @@ export default class ExpenseForm extends React.Component {
               onChange={this.onDescriptionChange}
             />
             <input
-              type="number"
+              type="text"
               placeholder="Amount"
+              value={}
             />
             <textarea
              placeholder="add a note for your expense (optional)"

@@ -5,7 +5,8 @@ import { BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 
 const AddExpensePage = () => (
 	  <div>
-	    This is add expense component
+	    <h1>Add Expense</h1>
+	    <ExpenseForm/>
 	 </div>
 );
 

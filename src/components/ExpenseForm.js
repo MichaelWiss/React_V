@@ -4,7 +4,7 @@ export default class ExpenseForm extends React.Component {
 	state = {
 		description: ''
 	};
-	onDescriptionChange = () => {
+	onDescriptionChange = (e) => {
       const description = e.target.value;
       this.setState(() => ({ description }));
 	};
@@ -14,8 +14,8 @@ export default class ExpenseForm extends React.Component {
            <form>
             <input
               type="text"
-              placeholder="description"
-              autofocus
+              placeholder="Description"
+              autoFocus
               value={this.state.description}
               onChange={this.onDescriptionChange}
             />

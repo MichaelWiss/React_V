@@ -31,8 +31,10 @@ export default class ExpenseForm extends React.Component {
 		}
 	};
 	onDateChange = (createdAt) => {
-        this.setState(() => ({ createdAt 
-        }));
+        this.setState(() => ({ createdAt}));
+      };
+    onFocusChange = ({ focused }) => {
+        this.setState(() => ({ calenderFocused: focused }));
 	};
 
 	render() {

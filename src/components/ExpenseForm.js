@@ -13,7 +13,8 @@ export default class ExpenseForm extends React.Component {
 		note: '',
 		amount: '',
 		createdAt: moment(),
-		calenderFocused: false
+		calenderFocused: false,
+		error: ''
 	};
 	onDescriptionChange = (e) => {
       const description = e.target.value;
@@ -40,6 +41,12 @@ export default class ExpenseForm extends React.Component {
 	};
     onSubmit = (e) => {
     	e.preventDefault();
+
+    	if (!this.state.description || !this.state.amount) {
+           this.setState(() => ({ error: 'Please provide description and amount'}));
+    	} else {
+    		console.log('submitted!');
+    	}
     };
 	render() {
 		return (

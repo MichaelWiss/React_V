@@ -38,11 +38,13 @@ export default class ExpenseForm extends React.Component {
     onFocusChange = ({ focused }) => {
         this.setState(() => ({ calenderFocused: focused }));
 	};
-
+    onSubmit = (e) => {
+    	e.preventDefault();
+    };
 	render() {
 		return (
          <div>
-           <form onSubmit=>
+           <form onSubmit={this.onSubmit}>
             <input
               type="text"
               placeholder="Description"

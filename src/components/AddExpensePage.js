@@ -9,7 +9,7 @@ const AddExpensePage = () => (
 	    <ExpenseForm 
            onSubmit={(expense) => {
              console.log(expense);
-           }};
+           }}
 	    />
 	 </div>
 );

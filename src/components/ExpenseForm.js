@@ -32,7 +32,7 @@ export default class ExpenseForm extends React.Component {
 		}
 	};
 	onDateChange = (createdAt) => {
-		if (dreatedAt) {
+		if (createdAt) {
 		 this.setState(() => ({ createdAt}));	
 		}
       };

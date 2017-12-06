@@ -10,4 +10,10 @@ const EditExpensePage = (props) => {
 	);
 };
 
+const mapStateToProps = (state, props) => {
+   return {
+   	
+  }
+};  
+
 export default EditExpensePage;

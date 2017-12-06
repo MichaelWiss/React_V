@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-router';
 import { BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 
 const EditExpensePage = (props) => {
@@ -12,7 +13,9 @@ const EditExpensePage = (props) => {
 
 const mapStateToProps = (state, props) => {
    return {
-   	
+     expense: stste.expenses.find(expense) => {
+
+     }
   }
 };  
 

@@ -13,7 +13,7 @@ const EditExpensePage = (props) => {
 
 const mapStateToProps = (state, props) => {
    return {
-     expense: stste.expenses.find(expense) => {
+     expense: state.expenses.find(expense) => {
 
      }
   }

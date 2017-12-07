@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
-import { BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
+import { editExpense, removeExpense } from '../actions/expenses';
+
 
 const EditExpensePage = (props) => {
     console.log(props);
@@ -10,9 +11,14 @@ const EditExpensePage = (props) => {
 	   <ExpenseForm
 	     expense={props.expense}
 	     onSubmit={(expense) => {
-           console.log('updated', expense);
+           props.dispatch(editExpense(props.expense.id, expense));
+           props.history.push('/');
 	     }}
 	   />
+	    <button onClick={(e) => {
+	      props.dispatch(removeExpense({ id: props.expense.id }));
+	      props.history.push('/');
+	    }}>Remove</button>
 	  </div>
 	);
 };

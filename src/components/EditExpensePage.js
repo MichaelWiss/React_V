@@ -13,8 +13,8 @@ const EditExpensePage = (props) => {
 
 const mapStateToProps = (state, props) => {
    return {
-     expense: state.expenses.find(expense) => expense.id === props.match.params.id)
+     expense: state.expenses.find((expense) => expense.id === props.match.params.id)
   };
 };  
 
-export default connect(mapStateProps)(EditExpensePage);
+export default connect(mapStateToProps)(EditExpensePage);

@@ -11,9 +11,9 @@ class ExpenseListFilters extends React.Component {
         this.props.dispatch(setStartDate(startDate));
         this.props.dispatch(setEndDate(endDate));
 	};
-	onFocusChange = () => {
-
-	};
+	onFocusChange = ({ calenderFocused }) => {
+       this.setState(() => ({ calenderFocused }));
+	}
 	render () {
 		return (
 	<div>

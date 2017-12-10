@@ -15,8 +15,8 @@ class ExpenseListFilters extends React.Component {
        this.setState(() => ({ calenderFocused }));
 	}
 	render () {
-		return (
-	<div>
+	return (
+	 <div>
 	  <input 
 	  type="text" 
 	  value={this.props.filters.text} 
@@ -28,7 +28,7 @@ class ExpenseListFilters extends React.Component {
 	    value={this.props.filters.sortBy}
         onChange={(e) => {
         	if (e.target.value === 'date') {
-              this.props.dispatch(sortByDate());
+               this.props.dispatch(sortByDate());
         	} else if (e.target.value === 'amount') {
               this.props.dispatch(sortByAmount());
         	}

@@ -46,9 +46,8 @@ class ExpenseListFilters extends React.Component {
       />
 	</div>  
    );
-	}
-
-}
+  }
+};
 
 
 

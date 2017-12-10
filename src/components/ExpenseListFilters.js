@@ -7,6 +7,9 @@ class ExpenseListFilters extends React.Component {
 	state = {
        calendarFocused: null
 	};
+	onDatesChange = ({ startDate, endDate }) => {
+
+	};
 	render () {
 		return (
 	<div>
@@ -32,6 +35,8 @@ class ExpenseListFilters extends React.Component {
 	  </select>
 	  <DateRangePicker
 	    startDate={this.props.filters.startDate}
+	    endDate={this.props.filters.endDate}
+	    onDatesChange={this.onDatesChange}
       />
 	</div>  
    );

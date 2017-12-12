@@ -10,3 +10,8 @@ test('should return a greeting', () => {
 	const reply = generatedGreeting('Mike');
 	expect (reply).toBe('Hello Mike!'); 
 });
+
+test('should generate greeting for no name', () => {
+    const reply = generatedGreeting();
+    expect(result).toBe('Hello Anonymous!');
+}); 

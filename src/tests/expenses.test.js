@@ -19,6 +19,15 @@ test('should setup editExpense action object', () => {
 	});
 });
 
-test('should setup add expenseobject with provided values', () => {
+test('should setup add expense object with provided values', () => {
+    const expenseData = {
+    	description: 'Rent',
+    	amount: 109500,
+    	createdAt: 1000,
+    	note: 'This was last months rent'
+    };
+});
+
+test('should setup addExpense action object with default values', () => {
 
 });

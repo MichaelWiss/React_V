@@ -18,3 +18,7 @@ test('should setup editExpense action object', () => {
         }
 	});
 });
+
+test('should setup add expenseobject with provided values', () => {
+
+});

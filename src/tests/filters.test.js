@@ -31,3 +31,17 @@ test('should generate set text filter object with text value', () => {
     	text
     }); 
 });
+
+test('should generate set text filter object with default', () => {
+    const action = setTextFilter();
+    expect(action).toEqual({
+       type: 'SET_TEXT_FILTER',
+       text: ''
+    });
+}); 
+
+
+
+
+
+

@@ -1,7 +1,9 @@
 import { 
  setStartDate,
  setEndDate,
- setTextFilter 
+ setTextFilter,
+ sortByAmount,
+ sortByDate 
 } from '../actions/filters';
 
 import moment from 'moment';
@@ -39,6 +41,14 @@ test('should generate set text filter object with default', () => {
        text: ''
     });
 }); 
+
+test('should generate action object for sort by date', () => {
+
+});
+
+test('should generate action object for sort by amount', () => {
+
+});
 
 
 

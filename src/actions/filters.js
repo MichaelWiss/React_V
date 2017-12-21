@@ -8,7 +8,7 @@ export const sortByAmount = () => ({
 });
 
 export const sortByDate = () => ({
-   type: 'SORT_BY_ DATE',
+   type: 'SORT_BY_DATE',
 });
 
 export const setStartDate = (startDate) => ({

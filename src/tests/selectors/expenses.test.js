@@ -18,8 +18,16 @@ const expenses = [{
      note: '',
      amount: 4500,
      createdAt: 1000
-}]
+}];
+
 
 test('should filter by test value', () => {
-   const result = selectExpenses(expenses);
+	const filters = {
+		text: 'e',
+		sortBy: 'date',
+		startDate: undefined,
+		endDate: undefined
+	};
+   const result = selectExpenses(expenses, filters);
+    expect(result).toEqual([ expenses[2], expenses[1]]);
 });

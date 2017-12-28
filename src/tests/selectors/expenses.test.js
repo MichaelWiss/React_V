@@ -18,7 +18,7 @@ const expenses = [{
      description: 'Credit Card',
      note: '',
      amount: 4500,
-     createdAt: moment(0).add(2, 'days').value()
+     createdAt: moment(0).add(4, 'days').valueOf()
 }];
 
 
@@ -30,7 +30,7 @@ test('should filter by test value', () => {
 		endDate: undefined
 	};
    const result = selectExpenses(expenses, filters);
-    expect(result).toEqual([ expenses[2], expenses[1]]);
+    expect(result).toEqual([expenses[2], expenses[1]]);
 });
 
 test('should filter by startDate', () => {
@@ -39,8 +39,9 @@ test('should filter by startDate', () => {
 		sortBy: 'date',
 		startDate: moment(0),
 		endDate: undefined
-	}
-   expect()
+	};
+   const result = selectExpenses(expenses, filters);
+   expect(result).toEqual([expenses[2], expenses[0]]);
 });
 
 

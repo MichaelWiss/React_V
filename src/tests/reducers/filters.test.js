@@ -38,5 +38,13 @@ test('should set text filter', () => {
     expect(state.text).toBe(text);
 });
 
+test('should set startDate filter', () => {
+
+});
+
+test('should set endDate filter', () => {
+
+});
+
 
 

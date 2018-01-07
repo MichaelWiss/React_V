@@ -39,7 +39,12 @@ test('should set text filter', () => {
 });
 
 test('should set startDate filter', () => {
-
+   const startDate = moment();
+   const action = {
+   	type: "SET_START_DATE",
+   	starteDate
+   };
+   const state = filtersReducer(undefined, action);
 });
 
 test('should set endDate filter', () => {

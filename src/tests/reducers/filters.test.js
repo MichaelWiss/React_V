@@ -21,9 +21,22 @@ test('should set sortBy to date', () => {
     	text: '',
     	startDate: undefined,
     	endDate: undefined,
-    	sortBy: 'amount'
+    	sortBy: 'date'
     };
     const action = { type: 'SORT_BY_DATE' };
     const state = filtersReducer(currentState, action);
     expect(state.sortBy).toBe('date');
 });
+
+test('should set text filter', () => {
+    const text = "This is my filter";
+    const action = {
+    	type: 'SET_TEXT_FILTER',
+    	text
+    };
+    const state = filtersReducer(undefined, action);
+    expect(state.text).toBe(text);
+});
+
+
+

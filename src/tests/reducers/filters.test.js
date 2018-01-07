@@ -42,12 +42,20 @@ test('should set startDate filter', () => {
    const startDate = moment();
    const action = {
    	type: "SET_START_DATE",
-   	starteDate
+   	startDate
    };
    const state = filtersReducer(undefined, action);
+   expect(state.startDate).toEqual(startDate);
 });
 
 test('should set endDate filter', () => {
+	const endDate = moment();
+	const action = {
+   	type: "SET_END_DATE",
+   	endDate
+   };
+   const state = filtersReducer(undefined, action);
+   expect(state.endDate).toEqual(endDate);
 
 });
 

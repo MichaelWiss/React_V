@@ -42,7 +42,14 @@ test('should add an expense', () => {
 
 test('should edit an expense', () => {
     const amount = 122000;
-    
+    const action = {
+    	type: 'EDIT_EXPENSE',
+    	id: expenses[1].id,
+    	updates: {
+    		amount
+    	}
+    };
+    const state = expense
 });
 
 

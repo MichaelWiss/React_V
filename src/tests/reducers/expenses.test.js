@@ -49,7 +49,8 @@ test('should edit an expense', () => {
     		amount
     	}
     };
-    const state = expense
+    const state = expensesReducer(expenses, action);
+    expect(state[1].amount).toBe(amount);
 });
 
 

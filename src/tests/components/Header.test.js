@@ -6,5 +6,5 @@ import Header from '../../components/Header';
 test('should render header correctly', () => {
     const renderer = new ReactShallowRenderer();
     renderer.render(<Header/>);
-    console.log(renderer.getRenderOutput());
+    console.log(renderer.getRenderOutput()).toMatchSnapshot();
 });

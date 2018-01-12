@@ -4,6 +4,6 @@ import Header from '../../components/NotFoundPage';
 
 
 test('should render notFoundPage correctly', () => {
-	const wrapper = shallow(<Header />);
+	const wrapper = shallow(<NotFoundPage />);
 	expect(wrapper).toMatchSnapshot(); 
 });

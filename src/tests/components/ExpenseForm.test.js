@@ -20,6 +20,6 @@ test('should render error for invalid form submission', () => {
   wrapper.find('form').simulate('submit', {
     preventDefault: () => { }
   });
-  expect(wrapper.state('error').length).toBeGreaterThan(0);
+  expect(wrapper.length).toBeGreaterThan(0);
   expect(wrapper).toMatchSnapshot();
 });

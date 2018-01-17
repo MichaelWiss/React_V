@@ -13,7 +13,6 @@ test('should render ExpenseForm correctly with expense data', () => {
     expect(wrapper).toMatchSnapshot(); 
 });
 
-
 test('should render error for invalid form submission', () => {
   const wrapper = shallow(<ExpenseForm />);
   expect(wrapper).toMatchSnapshot();
@@ -25,5 +24,6 @@ test('should render error for invalid form submission', () => {
 });
 
 test('shoud set description on input change', () => {
-
+  const wrapper = shallow(<ExpenseForm />);
+  
 });

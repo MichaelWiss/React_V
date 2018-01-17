@@ -29,4 +29,5 @@ test('shoud set description on input change', () => {
   wrapper.find('input').at(0).simulate('change', {
     target: { value }
   });
+  expect(wrapper.state('description')).toBe(value);
 });

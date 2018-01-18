@@ -40,3 +40,23 @@ test('should set note on test area change', () => {
   });
   expect(wrapper.state('note')).toBe(value);	
 }); 
+
+
+test('should set amount if valid amount', () => {
+  const value = 'New description';
+  const wrapper = shallow(<ExpenseForm />);
+  wrapper.find('input').at(0).simulate('change', {
+    target: { value }
+  });
+  expect(wrapper.state('description')).toBe(value);
+});
+
+
+test('should not set amount if invalid input', () => {
+  const value = 'New description';
+  const wrapper = shallow(<ExpenseForm />);
+  wrapper.find('input').at(0).simulate('change', {
+    target: { value }
+  });
+  expect(wrapper.state('description')).toBe(value);
+});

@@ -68,7 +68,7 @@ test('should call onSubmit prop for valid form submission', () => {
        preventDefault: () => { }
     });
     expect(wrapper.state('error')).toBe('');
-    expect(onSubmitSpy).toHaveBeenCalled();
+    expect(onSubmitSpy).toHaveBeenLastCalledWith(expenses[0]);
 });
 
 

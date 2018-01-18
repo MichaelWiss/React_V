@@ -76,6 +76,42 @@ test('should call onSubmit prop for valid form submission', () => {
     });
 });
 
+test('should set new date on date change', () => {
+	const wrapper = shallow(<ExpenseForm />);
+	wrapper.find('SingleDatePicker').prop('onDateChange')
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

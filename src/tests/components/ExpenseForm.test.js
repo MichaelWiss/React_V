@@ -60,3 +60,27 @@ test('should not set amount if invalid input', () => {
   });
   expect(wrapper.state('amount')).toBe('');
 });
+
+test('should call onSubmit prop for valid form submission', () => {
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

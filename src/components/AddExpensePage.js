@@ -18,4 +18,4 @@ const AddExpensePage = (props) => (
 );
 
 
-export default connect()(AddExpensePage);
+export default connect(undefined)(AddExpensePage);

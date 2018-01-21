@@ -10,12 +10,18 @@ const AddExpensePage = (props) => (
 	    <h1>Add Expense</h1>
 	    <ExpenseForm 
            onSubmit={(expense) => {
-             props.dispatch(addExpense(expense));
+             props.onSubmit(expense);
              props.history.push('/');
            }}
 	    />
 	 </div>
 );
 
+const mapDispatchToProps = (dispatch) => {
+   return {
 
-export default connect(undefined)(AddExpensePage);
+   };
+};
+
+
+export default connect(undefined, )(AddExpensePage);

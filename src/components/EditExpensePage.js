@@ -10,22 +10,25 @@ export class EditExpensePage extends React.Component {
            this.props.history.push('/');
 	     };
 	   onRemove = () => {
-	      props.dispatch(removeExpense({ id: props.expense.id }));
-	      props.history.push('/');
+	      this.props.dispatch(removeExpense({ id: this.props.expense.id }));
+	      this.props.history.push('/');
+	   };
+	   render() {
+       return (
+	  <div>
+	   <ExpenseForm
+	     expense={props.expense}
+	     onSubmit={this.onSubmit}
+	    />
+	    <button onClick={this.onRemove}>Remove</button>
+	  </div>
+	);
 	   }  
 };
 
 const EditExpensePage = (props) => {
     console.log(props);
-	return (
-	  <div>
-	   <ExpenseForm
-	     expense={props.expense}
-	     onSubmit={}
-	    />
-	    <button onClick={}>Remove</button>
-	  </div>
-	);
+	
 };
 
 const mapStateToProps = (state, props) => {

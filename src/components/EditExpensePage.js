@@ -6,9 +6,13 @@ import { editExpense, removeExpense } from '../actions/expenses';
 
 export class EditExpensePage extends React.Component {
     onSubmit = (expense) => {
-           props.dispatch(editExpense(props.expense.id, expense));
-           props.history.push('/');
-	     } 
+           this.props.dispatch(editExpense(this.props.expense.id, expense));
+           this.props.history.push('/');
+	     };
+	   onRemove = () => {
+	      props.dispatch(removeExpense({ id: props.expense.id }));
+	      props.history.push('/');
+	   }  
 };
 
 const EditExpensePage = (props) => {
@@ -19,10 +23,7 @@ const EditExpensePage = (props) => {
 	     expense={props.expense}
 	     onSubmit={}
 	    />
-	    <button onClick={(e) => {
-	      props.dispatch(removeExpense({ id: props.expense.id }));
-	      props.history.push('/');
-	    }}>Remove</button>
+	    <button onClick={}>Remove</button>
 	  </div>
 	);
 };

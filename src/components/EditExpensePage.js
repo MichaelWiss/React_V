@@ -4,16 +4,20 @@ import ExpenseForm from './ExpenseForm';
 import { editExpense, removeExpense } from '../actions/expenses';
 
 
+export class EditExpensePage extends React.Component {
+    onSubmit = (expense) => {
+           props.dispatch(editExpense(props.expense.id, expense));
+           props.history.push('/');
+	     } 
+};
+
 const EditExpensePage = (props) => {
     console.log(props);
 	return (
 	  <div>
 	   <ExpenseForm
 	     expense={props.expense}
-	     onSubmit={(expense) => {
-           props.dispatch(editExpense(props.expense.id, expense));
-           props.history.push('/');
-	     }}
+	     onSubmit={}
 	    />
 	    <button onClick={(e) => {
 	      props.dispatch(removeExpense({ id: props.expense.id }));

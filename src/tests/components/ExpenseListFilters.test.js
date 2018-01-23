@@ -20,5 +20,9 @@ beforeEach(() => {
        setStartDate={setStartDate}
        setEndDate={setEndDate}      
    	/>
-   	)
+  );
+});
+
+test('should render ExpenseListFilters correctly', () => {
+   expect(wrapper).toMatchSnapshot();
 });

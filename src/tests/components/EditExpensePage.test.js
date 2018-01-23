@@ -23,10 +23,11 @@ test('should render EditExpensePage ', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('', () => {
-
+test('should handle editExpense', () => {
+    wrapper.find('ExpenseForm').prop('onSubmit')(expenses[2]);
+    
 });
 
-test('', () => {
+test('should handle removeExpense', () => {
 
 });

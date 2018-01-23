@@ -14,15 +14,16 @@ class ExpenseListFilters extends React.Component {
 	onFocusChange = (calendarFocused) => {
        this.setState(() => ({ calendarFocused }));
 	}
+	onTextChange = (e) => {
+	  	this.props.dispatch(setTextFilter(e.target.value));
+	  };
 	render () {
 	return (
 	 <div>
 	  <input 
 	  type="text" 
 	  value={this.props.filters.text} 
-	  onChange={(e) => {
-	  	this.props.dispatch(setTextFilter(e.target.value));
-	  }} 
+	  onChange={this.onTextChange} 
 	  />
 	  <select 
 	    value={this.props.filters.sortBy}

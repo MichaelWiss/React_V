@@ -17,6 +17,13 @@ class ExpenseListFilters extends React.Component {
 	onTextChange = (e) => {
 	  	this.props.dispatch(setTextFilter(e.target.value));
 	  };
+	onSortChange = (e) => {
+        	if (e.target.value === 'date') {
+               this.props.dispatch(sortByDate());
+        	} else if (e.target.value === 'amount') {
+              this.props.dispatch(sortByAmount());
+        }
+     };   
 	render () {
 	return (
 	 <div>
@@ -27,13 +34,7 @@ class ExpenseListFilters extends React.Component {
 	  />
 	  <select 
 	    value={this.props.filters.sortBy}
-        onChange={(e) => {
-        	if (e.target.value === 'date') {
-               this.props.dispatch(sortByDate());
-        	} else if (e.target.value === 'amount') {
-              this.props.dispatch(sortByAmount());
-        }
-        }}
+        onChange={this.onSortChange}
 	   >
 	    <option value="date">Date</option>
         <option value="amount">Amount</option>

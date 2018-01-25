@@ -51,17 +51,22 @@ test('should sort by date' , () => {
    wrapper.find('select').simulate('change', {
       target: { value } 
    });
+   expect(sortByDate).toHaveBeenCalled();
 });
 
-test('' , () => {
+test('should sort by amount', () => {
+  const value = 'amount';
+   wrapper.find('select').simulate('change', {
+      target: { value } 
+   });
+   expect(sortByAmount).toHaveBeenCalled();
+});
+
+test('should handle date changes', () => {
 
 });
 
-test('' , () => {
-
-});
-
-test('' , () => {
+test('should handle date focus changes', () => {
 
 });
 

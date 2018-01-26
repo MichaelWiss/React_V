@@ -1,17 +1,18 @@
 const path = require('path');
 
-module.exports = {
+module.exports = () => {
+  return {
    entry: './src/app.js',
    output: {
-   	path: path.join(__dirname, 'public'),
-   	filename: 'bundle.js'
+    path: path.join(__dirname, 'public'),
+    filename: 'bundle.js'
    },
    module: {
-   	rules: [{
-   		loader: 'babel-loader',
-   		test: /\.js$/,
-   		exclude: /node_modules/
-   	}, {
+    rules: [{
+      loader: 'babel-loader',
+      test: /\.js$/,
+      exclude: /node_modules/
+    }, {
          test: /\.s?css$/,
          use: [
            'style-loader',
@@ -25,4 +26,7 @@ module.exports = {
       contentBase: path.join(__dirname, 'public'),
       historyApiFallback: true 
    }
+  };
 };
+
+

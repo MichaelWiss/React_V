@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = (env) => {
   const isProduction = env === 'production';
-  const CSSExtract = new ExtractTextPlugin();
+  const CSSExtract = new ExtractTextPlugin('styles.css');
 
   return {
    entry: './src/app.js',
@@ -18,11 +18,9 @@ module.exports = (env) => {
       exclude: /node_modules/
     }, {
          test: /\.s?css$/,
-         use: [
-           'style-loader',
-           'css-loader', 
-           'sass-loader'
-         ]
+         use: CSSExtract.extract({
+          use:
+         })
       }]
    },
    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',

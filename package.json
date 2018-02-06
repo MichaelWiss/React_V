@@ -2,7 +2,7 @@
   "name": "expensify",
   "version": "1.0.0",
   "engines": {
-    "node": "9.2.1"
+    "node": "9.5.0"
   },
   "main": "index.js",
   "repository": "https://github.com/MichaelWiss/React_V.git",

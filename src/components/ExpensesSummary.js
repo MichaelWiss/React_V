@@ -12,5 +12,11 @@ export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
    	);
 };
 
+const mapStateToProps = (state) => {
+
+};
+
+export default connect()(ExpensesSummary);
+
 
 

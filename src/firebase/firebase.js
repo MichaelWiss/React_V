@@ -27,18 +27,5 @@ import * as firebase from 'firebase';
      console.log('This failed.', e);
   });
 
- //database.ref().set('This is my data');
-
- database.ref('age').set(27);
- database.ref('location/city').set('Tokyo');
-
- database.ref('attributes').set({
-    height: 75,
-    weight: 150
- }).then(() => {
- 	console.log('Second set call worked');
- }).catch((e) => {
- 	console.log('Things didnt work for the second error', e);
- });
-
+ 
  

@@ -40,3 +40,5 @@ import * as firebase from 'firebase';
  }).catch((e) => {
  	console.log('Things didnt work for the second error', e);
  });
+
+ 

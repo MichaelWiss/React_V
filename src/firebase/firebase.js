@@ -29,6 +29,6 @@ import * as firebase from 'firebase';
  database.ref('location/city').set('Tokyo');
 
  database.ref('attributes').set({
-    height: 73,
+    height: 75,
     weight: 150
  });

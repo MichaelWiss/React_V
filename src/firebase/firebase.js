@@ -21,6 +21,10 @@ import * as firebase from 'firebase';
      	city: 'New York',
      	country: 'United States'
      }
+  }).then(() => {
+  	console.log('Data is saved');
+  }).catch((e) => {
+     console.log('This failed.', e);
   });
 
  //database.ref().set('This is my data');
@@ -31,4 +35,8 @@ import * as firebase from 'firebase';
  database.ref('attributes').set({
     height: 75,
     weight: 150
+ }).then(() => {
+ 	console.log('Second set call worked');
+ }).catch((e) => {
+ 	console.log('Things didnt work for the second error', e);
  });

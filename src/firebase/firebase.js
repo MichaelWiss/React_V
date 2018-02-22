@@ -12,5 +12,11 @@ import * as firebase from 'firebase';
   firebase.initializeApp(config);
 
   firebase.database().ref().set({
-     name: 'Michael Wiss'
+     name: 'Michael Wiss',
+     age: 36,
+     isSingle: false,
+     location: {
+     	city: 'New York',
+     	country: 'United States'
+     }
   });

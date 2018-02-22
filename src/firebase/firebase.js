@@ -25,6 +25,10 @@ import * as firebase from 'firebase';
 
  //database.ref().set('This is my data');
 
- database.ref().set({
-    age: 27
+ database.ref('age').set(27);
+ database.ref('location/city').set('Tokyo');
+
+ database.ref('attributes').set({
+    height: 73,
+    weight: 150
  });

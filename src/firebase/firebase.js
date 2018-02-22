@@ -11,7 +11,9 @@ import * as firebase from 'firebase';
 
   firebase.initializeApp(config);
 
-  firebase.database().ref().set({
+  const database = firebase.database();
+
+ database.ref().set({
      name: 'Michael Wiss',
      age: 36,
      isSingle: false,
@@ -20,3 +22,9 @@ import * as firebase from 'firebase';
      	country: 'United States'
      }
   });
+
+ //database.ref().set('This is my data');
+
+ database.ref().set({
+    age: 27
+ });

@@ -13,25 +13,29 @@ import * as firebase from 'firebase';
 
   const database = firebase.database();
 
- // database.ref().set({
- //     name: 'Michael Wiss',
- //     age: 36,
- //     isSingle: false,
- //     location: {
- //     	city: 'New York',
- //     	country: 'United States'
- //     }
- //  }).then(() => {
- //  	console.log('Data is saved');
- //  }).catch((e) => {
- //     console.log('This failed.', e);
- //  });
-
-database.ref()
-  .remove()
-  .then(() => {
-     console.log('Data was not removed');
+ database.ref().set({
+     name: 'Michael Wiss',
+     age: 36,
+     isSingle: false,
+     location: {
+     	city: 'New York',
+     	country: 'United States'
+     }
+  }).then(() => {
+  	console.log('Data is saved');
   }).catch((e) => {
-     console.log('Did not remove data', e);
+     console.log('This failed.', e);
   });
+
+  database.ref('isSingle').set(null);
+
+// database.ref()
+//   .remove()
+//   .then(() => {
+//      console.log('Data was not removed');
+//   }).catch((e) => {
+//      console.log('Did not remove data', e);
+//   });
+
+
  

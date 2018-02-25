@@ -16,7 +16,7 @@ import * as firebase from 'firebase';
  database.ref().set({
      name: 'Michael Wiss',
      age: 36,
-     isSingle: false,
+     job: 'software developer'
      location: {
      	city: 'New York',
      	country: 'United States'
@@ -28,10 +28,10 @@ import * as firebase from 'firebase';
   });
 
   database.ref().update({
-    name: 'Mike',
-    age: 39,
-    job: 'software developer',
-    isSingle: null
+    job: 'Manager',
+    location: {
+    	city: 'Boston'
+    }
   });
 
 // database.ref()

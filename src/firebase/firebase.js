@@ -27,7 +27,9 @@ import * as firebase from 'firebase';
      console.log('This failed.', e);
   });
 
-  database.ref('isSingle').set(null);
+  database.ref().update({
+
+  });
 
 // database.ref()
 //   .remove()

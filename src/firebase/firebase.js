@@ -16,7 +16,11 @@ import * as firebase from 'firebase';
  database.ref().set({
      name: 'Michael Wiss',
      age: 36,
-     job: 'software developer',
+     stressLevel: 6,
+     job: {
+     	   title: 'software developer',
+           company: 'Google'
+       },
      location: {
      	city: 'New York',
      	country: 'United States'
@@ -28,8 +32,9 @@ import * as firebase from 'firebase';
   });
 
   database.ref().update({
-    job: 'Manager',
-    'location/city': 'Boston'
+  	stressLevel: 9,
+    'job/company': 'Amazon',
+    'location/city': 'Seattle'
   });
 
 // database.ref()

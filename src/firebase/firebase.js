@@ -28,7 +28,10 @@ import * as firebase from 'firebase';
   });
 
   database.ref().update({
-
+    name: 'Mike',
+    age: 39,
+    job: 'software developer',
+    isSingle: null
   });
 
 // database.ref()

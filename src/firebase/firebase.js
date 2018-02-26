@@ -1,26 +1,36 @@
 import * as firebase from 'firebase';
 
- const config = {
+const config = {
     apiKey: "AIzaSyB5CThmCjH690y293sa9WkORR6A7tdCz6w",
     authDomain: "expensify-wiss.firebaseapp.com",
     databaseURL: "https://expensify-wiss.firebaseio.com",
     projectId: "expensify-wiss",
     storageBucket: "expensify-wiss.appspot.com",
     messagingSenderId: "134262336316"
-  };
+};
 
-  firebase.initializeApp(config);
+firebase.initializeApp(config);
 
-  const database = firebase.database();
+ 
+  
 
-  database.ref().on('value', (snapshot) => {
-     console.log(snapshot.val());
-  });
+const database = firebase.database();
 
-  setTimeout(() => {
+database.ref().on('value', (snapshot) => {
+   console.log(snapshot.val());
+});
+
+setTimeout(() => {
   	database.ref('age').set(48);
   }, 3500);
 
+ setTimeout(() => {
+  	database.ref().off();
+  }, 7000);
+
+  setTimeout(() => {
+  	database.ref('age').set(58);
+  }, 10500);
 
 // database.ref('location/city')
 //     .once('value')

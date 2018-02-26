@@ -11,13 +11,12 @@ const config = {
 
 firebase.initializeApp(config);
 
- 
-  
-
 const database = firebase.database();
 
-database.ref().on('value', (snapshot) => {
+const onValueChange = database.ref().on('value', (snapshot) => {
    console.log(snapshot.val());
+}, (e) => {
+	console.log('Error with data fetching', e);
 });
 
 setTimeout(() => {
@@ -25,7 +24,7 @@ setTimeout(() => {
   }, 3500);
 
  setTimeout(() => {
-  	database.ref().off();
+  	database.ref().off('value', onValueChange);
   }, 7000);
 
   setTimeout(() => {

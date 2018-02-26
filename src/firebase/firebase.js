@@ -17,6 +17,10 @@ import * as firebase from 'firebase';
      console.log(snapshot.val());
   });
 
+  setTimeout(() => {
+  	database.ref('age').set(48);
+  }, 3500);
+
 
 // database.ref('location/city')
 //     .once('value')

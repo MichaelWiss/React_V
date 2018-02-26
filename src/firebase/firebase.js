@@ -14,7 +14,7 @@ import * as firebase from 'firebase';
   const database = firebase.database();
 
 
-database.ref()
+database.ref('location')
     .once('value')
     .then((snapshot) => {
       const val = snapshot.val();

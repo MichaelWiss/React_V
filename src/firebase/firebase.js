@@ -16,8 +16,9 @@ import * as firebase from 'firebase';
 
 database.ref()
     .once('value')
-    .then(() => {
-
+    .then((snapshot) => {
+      const val = snapshot.val();
+      console.log(val);
     })
     .catch((e) => {
     	console.log('Error fetching data', e);

@@ -13,16 +13,20 @@ import * as firebase from 'firebase';
 
   const database = firebase.database();
 
+  database.ref().on('value', (snapshot) => {
+     console.log(snapshot.val());
+  });
 
-database.ref('location')
-    .once('value')
-    .then((snapshot) => {
-      const val = snapshot.val();
-      console.log(val);
-    })
-    .catch((e) => {
-    	console.log('Error fetching data', e);
-    });
+
+// database.ref('location/city')
+//     .once('value')
+//     .then((snapshot) => {
+//       const val = snapshot.val();
+//       console.log(val);
+//     })
+//     .catch((e) => {
+//     	console.log('Error fetching data', e);
+//     });
 
 
 

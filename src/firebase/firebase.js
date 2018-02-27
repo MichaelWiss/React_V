@@ -14,10 +14,22 @@ firebase.initializeApp(config);
 const database = firebase.database();
 
 
-database.ref().on('value', (snapshot) => {
-	const val = snapshot.val();
-	console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
-})
+const notes = [{
+	id: '12',
+	title: 'First note!',
+	body: 'This is my note'
+},{
+	id: '12',
+	title: 'First note!',
+	body: 'This is my note'
+
+}];
+
+
+// database.ref().on('value', (snapshot) => {
+// 	const val = snapshot.val();
+// 	console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
+// })
 
 // const onValueChange = database.ref().on('value', (snapshot) => {
 //    console.log(snapshot.val());

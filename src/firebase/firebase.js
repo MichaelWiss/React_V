@@ -13,18 +13,36 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+database.ref('notes').push({
+	title: 'Course Topics',
+	body: 'React Native, Angular, Python'
+});
 
-const notes = [{
-	id: '12',
-	title: 'First note!',
-	body: 'This is my note'
-},{
-	id: '12',
-	title: 'First note!',
-	body: 'This is my note'
+// const firebaseNotes = {
+//     notes: {
+//     	nobunaga: {
+//     		title: 'First note!',
+//     		body: 'This is my note'
+//     	},
+//     	Uesegi:{
+//     		title: 'Another note!',
+// 	        body: 'This is my note'
+//     	}
+//     }
+// };
 
-}];
+// const notes = [{
+// 	id: '12',
+// 	title: 'First note!',
+// 	body: 'This is my note'
+// },{
+// 	id: '786wre',
+// 	title: 'Another note!',
+// 	body: 'This is my note'
 
+// }];
+
+// database.ref('notes').set(notes);
 
 // database.ref().on('value', (snapshot) => {
 // 	const val = snapshot.val();

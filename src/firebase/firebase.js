@@ -13,10 +13,38 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref('notes').push({
-	title: 'Course Topics',
-	body: 'React Native, Angular, Python'
+
+
+database.ref('expenses').push({
+    title: 'Expense 1',
+    body: 'New Phone'
 });
+
+database.ref('expenses').push({
+    title: 'Expense 2',
+    body: 'New Headphones'
+});
+
+database.ref('expenses').push({
+    title: 'Expense 3',
+    body: 'New running shoes'     
+});
+
+
+
+
+
+// database.ref('notes/-L6NQGEl77ai74_W9pZk').remove();
+
+
+// database.ref('notes').push({
+// 	title: 'Course Topics',
+// 	body: 'React Native, Angular, Python'
+// });
+
+// database.ref('notes/-L6NQGEl77ai74_W9pZk').update({
+// 	body: 'Buy food'
+// });
 
 // const firebaseNotes = {
 //     notes: {

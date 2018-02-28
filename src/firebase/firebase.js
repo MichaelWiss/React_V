@@ -13,22 +13,19 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+database.ref('expenses')
+   .once('value')
+   .then((snapshot) => {
+      console.log(snapshot.val());
+   });   
 
 
-database.ref('expenses').push({
-    title: 'Expense 1',
-    body: 'New Phone'
-});
+// database.ref('expenses').push({
+//     title: 'Expense 1',
+//     body: 'New Phone'
+// });
 
-database.ref('expenses').push({
-    title: 'Expense 2',
-    body: 'New Headphones'
-});
 
-database.ref('expenses').push({
-    title: 'Expense 3',
-    body: 'New running shoes'     
-});
 
 
 

@@ -16,7 +16,11 @@ const database = firebase.database();
 database.ref('expenses')
    .once('value')
    .then((snapshot) => {
-      console.log(snapshot.val());
+      const expenses = [];
+
+      snapshot.forEach((childSnapshot) => {
+
+      })
    });   
 
 

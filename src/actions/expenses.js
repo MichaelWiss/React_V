@@ -1,5 +1,13 @@
 import uuid from 'uuid';
 
+// component calls action generator
+// action generator returns object
+// component dispatches object
+// redux store changes
+// components calls actions generator
+//action generator returns function
+//function runs(has the ability to dispatch other actions)
+
 
 //expenses reducer
 export const addExpense = (

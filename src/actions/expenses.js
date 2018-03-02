@@ -11,22 +11,9 @@ import database from '../firebase/firebase';
 
 
 //expenses reducer
-export const addExpense = (
-   { 
-      description = '', 
-      note = '', 
-      amount= 0, 
-      createdAt = 0 
-     } = {}
-   ) => ({
+export const addExpense = (expense) => ({
     type: 'ADD_EXPENSE',
-    expense: {
-      id: uuid(),
-      description,
-      note,
-      amount,
-      createdAt
-    }
+    expense
 });
 
 
@@ -38,7 +25,13 @@ export const startAddExpense = (expenseData = {}) => {
       amount= 0, 
       createdAt = 0
       } = expenseData;
-
+      const expense = { description, note, createdAt };
+      database.ref('expenses').push(expense).then((ref) => {
+         dispatch(addExpense({
+          id: ref.key.key,
+          ...expense
+         }));
+      });
    };
 };
 

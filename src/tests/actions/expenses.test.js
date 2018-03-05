@@ -37,7 +37,12 @@ test('should setup add expense object with provided values', () => {
 
 test('should add expense to database and store', () => {
   const store = createMockStore({});
-
+  const expenseData = {
+    description: "Mouse",
+    amount: 3000,
+    note: 'This one is better',
+    createdAt: 1000
+  } 
   store.dispatch(startAddExpense()) 
 });
 

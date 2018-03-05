@@ -1,10 +1,12 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import moment from 'moment';
+import { startAddExpense, addExpense, editExpense, removeExpense } from '../../actions/expenses';
 import expenses from '../fixtures/expenses';
 
+const createMockStore = configureMockStore({thunk});
 
-import { addExpense, editExpense, removeExpense } from '../../actions/expenses';
+
 
 test('should setup remove expense action object', () => {
    const action = removeExpense({ id: '123abc' });
@@ -34,7 +36,9 @@ test('should setup add expense object with provided values', () => {
 });
 
 test('should add expense to database and store', () => {
-   
+  const store = createMockStore({});
+
+  store.dispatch(startAddExpense()) 
 });
 
 test('should add expense with defaults and store', () => {

@@ -23,14 +23,19 @@ test('should setup editExpense action object', () => {
 });
 
 test('should setup add expense object with provided values', () => {
-    const action = addExpense(expenseData);
+    const action = addExpense(expenses[2]);
     expect(action).toEqual({
         type: 'ADD_EXPENSE',
-        expense: {
-        	...expenseData,
-        	id: expect.any(String)
-        }
+        expense: expenses[2]
     });
+});
+
+test('should add expense to database and store', () => {
+
+});
+
+test('should add expense with defaults and store', () => {
+
 });
 
 // test('should setup addExpense action object with default values', () => {

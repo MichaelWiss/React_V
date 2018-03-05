@@ -52,6 +52,7 @@ test('should add expense to database and store', (done) => {
         ...expenseData
      }
     });
+    database.ref(`expenses/${actions[0].expense.id}`);
     done();
   }); 
 });

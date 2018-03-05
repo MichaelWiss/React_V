@@ -43,7 +43,9 @@ test('should add expense to database and store', () => {
     note: 'This one is better',
     createdAt: 1000
   } 
-  store.dispatch(startAddExpense()) 
+  store.dispatch(startAddExpense(expenseData)).then(() => {
+
+  }); 
 });
 
 test('should add expense with defaults and store', () => {

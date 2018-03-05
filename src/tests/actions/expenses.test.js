@@ -1,5 +1,8 @@
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import moment from 'moment';
 import expenses from '../fixtures/expenses';
+
 
 import { addExpense, editExpense, removeExpense } from '../../actions/expenses';
 
@@ -31,7 +34,7 @@ test('should setup add expense object with provided values', () => {
 });
 
 test('should add expense to database and store', () => {
-
+   
 });
 
 test('should add expense with defaults and store', () => {

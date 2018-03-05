@@ -1,4 +1,5 @@
 import moment from 'moment';
+import expenses from '../fixtures/expenses';
 
 import { addExpense, editExpense, removeExpense } from '../../actions/expenses';
 
@@ -22,12 +23,6 @@ test('should setup editExpense action object', () => {
 });
 
 test('should setup add expense object with provided values', () => {
-    const expenseData = {
-    	description: 'Rent',
-    	amount: 109500,
-    	createdAt: 1000,
-    	note: 'This was last months rent'
-    };
     const action = addExpense(expenseData);
     expect(action).toEqual({
         type: 'ADD_EXPENSE',

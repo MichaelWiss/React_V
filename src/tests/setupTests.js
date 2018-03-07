@@ -1,5 +1,6 @@
-import Enzyme from 'enzyme';
+// import Enzyme from 'enzyme';
 
-Enzyme.configure({
-   adaptor: new Adaptor()
-});
+// Enzyme.configure({
+//    adaptor: new Adaptor()
+// });
+require('dotenv').config({ path: '.env.test' });

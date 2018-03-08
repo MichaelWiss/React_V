@@ -7,7 +7,12 @@ import database from '../../firebase/firebase';
 const createMockStore = configureMockStore([thunk]);
 
 beforeEach(() => {
-   database.ref('expenses').set
+   const expenseData = {};
+   expenses.forEach(({ }) => {
+
+   });
+   database.ref('expenses').set(expensesData);
+  }
 });
 
 test('should setup remove expense action object', () => {

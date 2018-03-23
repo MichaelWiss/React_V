@@ -40,8 +40,9 @@ test('should remove expense from forebase', (done) => {
        id
      });
      return database.ref(`expenses/${id}`).once('value');
-   }).then(() => {
-
+   }).then((snapshot) => {
+    expect(snapshot.val()).toBeFalsy();
+    done();
    });
 });
 

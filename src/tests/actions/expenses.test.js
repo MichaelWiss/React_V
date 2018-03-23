@@ -22,6 +22,12 @@ test('should setup remove expense action object', () => {
   });
 });
 
+test('should remove expense from forebase', (done) => {
+   const store = createMockStore({});
+   const id = expenses[2].id;
+   store.dispatch()
+});
+
 test('should setup edit expense action object', () => {
   const action = editExpense('123abc', { note: 'New note value' });
   expect(action).toEqual({

@@ -36,8 +36,12 @@ test('should remove expense from forebase', (done) => {
    store.dispatch(startRemoveExpense({ id })).then(() => {
      const actions = store.getActions();
      expect(actions[0]).toEqual({
-
+       type: 'REMOVE_EXPENSE',
+       id
      });
+     return database.ref(`expenses/${id}`).once('value');
+   }).then(() => {
+
    });
 });
 

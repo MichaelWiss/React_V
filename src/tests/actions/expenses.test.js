@@ -34,7 +34,10 @@ test('should remove expense from forebase', (done) => {
    const store = createMockStore({});
    const id = expenses[2].id;
    store.dispatch(startRemoveExpense({ id })).then(() => {
+     const actions = store.getActions();
+     expect(actions[0]).toEqual({
 
+     });
    });
 });
 

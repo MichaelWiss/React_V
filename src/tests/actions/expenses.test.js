@@ -3,7 +3,8 @@ import thunk from 'redux-thunk';
 import { 
     startAddExpense, 
     addExpense, 
-    editExpense, 
+    editExpense,
+    startEditExpense, 
     removeExpense,
     startRemoveExpense, 
     setExpenses, 
@@ -59,7 +60,11 @@ test('should setup edit expense action object', () => {
 
 test('should edit expense from firebase', () => {
   const store = createMockStore({});
-  
+  const id = expenses[0].id;
+  const updates = { amount: 21045 };
+  store.dispatch(startEditExpense(id, updates)).then(() => {
+
+  });
 });
 
 test('should setup add expense action object with provided values', () => {

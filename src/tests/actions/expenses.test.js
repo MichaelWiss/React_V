@@ -70,6 +70,9 @@ test('should edit expense from firebase', () => {
       updates
      });
      return database.ref(`expenses/${id}`).once('value');
+   }).then((snapshot) => {
+     expect(snapshot.val().amount).toBe(updates.amount);
+     done();
   });
 });
 

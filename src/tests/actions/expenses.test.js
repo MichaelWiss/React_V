@@ -57,6 +57,11 @@ test('should setup edit expense action object', () => {
   });
 });
 
+test('should edit expense from firebase', () => {
+  const store = createMockStore({});
+  
+});
+
 test('should setup add expense action object with provided values', () => {
   const action = addExpense(expenses[2]);
   expect(action).toEqual({
